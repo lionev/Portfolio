@@ -43,7 +43,7 @@ SEP = " · "
 def jobs_pt() -> list[dict]:
     return [
         {
-            "title": "Desenvolvedor Full Stack  —  IASSEPE  ·  Atual",
+            "title": "Desenvolvedor Full Stack  —  IASSEPE  ·  mar/2026 – jul/2026  ·  5 meses",
             "subtitle": "Instituto de Atenção à Saúde e Bem-estar dos Servidores do Estado de Pernambuco",
             "bullets": [
                 "Desenvolvimento de sistemas internos para o serviço público, de ponta a ponta: SPAs com React 19, TypeScript, Vite e Tailwind CSS no front-end; APIs REST com Node.js, Express, JWT, LDAP e PostgreSQL + Prisma no back-end.",
@@ -144,7 +144,7 @@ def jobs_pt() -> list[dict]:
 def jobs_en() -> list[dict]:
     return [
         {
-            "title": "Full Stack Developer  —  IASSEPE  ·  Present",
+            "title": "Full Stack Developer  —  IASSEPE  ·  Mar/2026 – Jul/2026  ·  5 months",
             "subtitle": "Institute for Health Care and Well-being of Civil Servants of the State of Pernambuco",
             "bullets": [
                 "Internal systems for public service, end to end: SPAs with React 19, TypeScript, Vite and Tailwind CSS on the front-end; REST APIs with Node.js, Express, JWT, LDAP and PostgreSQL + Prisma on the back-end.",

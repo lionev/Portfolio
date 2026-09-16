@@ -66,7 +66,7 @@ export const copy = {
       kicker: 'About',
       title: 'From help desk to',
       titleItalic: 'product',
-      p1: 'I started fixing machines at a city hall and a transit consortium. Then came N1–N3 support, ERP, and Active Directory. Today I ship internal systems at IASSEPE — and, in parallel, I build tools that a gaming community actually opens every day.',
+      p1: 'I started fixing machines at a city hall and a transit consortium. Then came N1–N3 support, ERP, and Active Directory. I shipped internal systems at IASSEPE — and, in parallel, I build tools that a gaming community actually opens every day.',
       p2: 'That mix matters: I know what breaks in production, what a non-technical user needs to see on screen, and how an overlay or a payment webhook behaves when nobody is watching.',
       education: 'Education',
     },
@@ -133,7 +133,7 @@ export const copy = {
       kicker: 'Sobre',
       title: 'Do help desk ao',
       titleItalic: 'produto',
-      p1: 'Comecei consertando máquina em prefeitura e consórcio de transporte. Passei por suporte N1–N3, ERP e Active Directory. Hoje entrego sistemas internos no IASSEPE — e, em paralelo, construo ferramentas que a comunidade de jogos realmente abre todo dia.',
+      p1: 'Comecei consertando máquina em prefeitura e consórcio de transporte. Passei por suporte N1–N3, ERP e Active Directory. Entreguei sistemas internos no IASSEPE — e, em paralelo, construo ferramentas que a comunidade de jogos realmente abre todo dia.',
       p2: 'Essa mistura importa: sei o que quebra em produção, o que um usuário leigo precisa ver na tela, e como um overlay ou um webhook de pagamento se comporta quando não tem ninguém olhando.',
       education: 'Formação',
     },
@@ -384,14 +384,14 @@ export const experience = [
     tags: ['React 19', 'TypeScript', 'Node.js', 'Prisma', 'LDAP'],
     en: {
       role: 'Full Stack Developer',
-      period: 'Present',
+      period: 'Mar 2026 — Jul 2026',
       location: 'Pernambuco',
       detail:
         'Internal systems for public service, end to end: SPAs with React 19, TypeScript, Vite and Tailwind; REST APIs with Node.js, Express, JWT, LDAP and PostgreSQL + Prisma.',
     },
     pt: {
       role: 'Desenvolvedor Full Stack',
-      period: 'Atual',
+      period: 'Mar 2026 — Jul 2026',
       location: 'Pernambuco',
       detail:
         'Sistemas internos para o serviço público, de ponta a ponta: SPAs com React 19, TypeScript, Vite e Tailwind; APIs REST com Node.js, Express, JWT, LDAP e PostgreSQL + Prisma.',
