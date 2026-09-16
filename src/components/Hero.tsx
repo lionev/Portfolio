@@ -3,6 +3,7 @@ import { ArrowDownRight } from 'lucide-react'
 import { profile } from '../data/content'
 import { useLang } from '../i18n/LanguageContext'
 import Magnetic from './Magnetic'
+import CvDownload from './CvDownload'
 
 export default function Hero() {
   const { t } = useLang()
@@ -54,13 +55,7 @@ export default function Hero() {
                 {t.hero.selected}
                 <ArrowDownRight className="ml-1.5 size-4" />
               </Magnetic>
-              <a
-                href={profile.cv}
-                download
-                className="border-line hover:border-paper inline-flex rounded-full border px-5 py-2.5 text-sm"
-              >
-                {t.hero.download}
-              </a>
+              <CvDownload variant="hero" />
             </div>
           </motion.div>
         </div>

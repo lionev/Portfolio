@@ -9,7 +9,10 @@ export const profile = {
   phoneHref: 'tel:+5581986273135',
   linkedin: 'https://linkedin.com/in/julionev10',
   github: 'https://github.com/lionev',
-  cv: '/Julio_Jorge.pdf',
+  cv: {
+    pt: '/Julio_Jorge.pdf',
+    en: '/Julio_Jorge_Resume.pdf',
+  },
   english: 'A2',
 }
 
@@ -25,13 +28,19 @@ export const copy = {
       contact: 'Contact',
     },
     langLabel: 'Language',
+    cv: {
+      short: 'CV',
+      download: 'Download CV',
+      choose: 'Choose a language',
+      portuguese: 'Português',
+      english: 'English',
+    },
     hero: {
       open: 'Open to work',
       role: 'Full Stack Developer',
       lead: 'I build tools people actually use — internal systems, desktop overlays, and live products.',
       body: 'I work end to end: React and Node in public service, Python and C# in desktop tools, and live products with real payments for gaming communities.',
       selected: 'Selected work',
-      download: 'Download CV',
     },
     work: {
       kicker: 'Selected work',
@@ -86,13 +95,19 @@ export const copy = {
       contact: 'Contato',
     },
     langLabel: 'Idioma',
+    cv: {
+      short: 'CV',
+      download: 'Baixar CV',
+      choose: 'Escolha o idioma',
+      portuguese: 'Português',
+      english: 'English',
+    },
     hero: {
       open: 'Aberto a oportunidades',
       role: 'Desenvolvedor Full Stack',
       lead: 'Eu construo ferramentas que as pessoas realmente usam — sistemas internos, overlays desktop e produtos no ar.',
       body: 'Atuo de ponta a ponta: React e Node no serviço público, Python e C# em ferramentas desktop, e produtos com pagamento real para comunidades de jogos.',
       selected: 'Ver projetos',
-      download: 'Baixar CV',
     },
     work: {
       kicker: 'Projetos',
@@ -398,6 +413,42 @@ export const experience = [
       location: 'Pernambuco',
       detail:
         'Gestão de infraestrutura corporativa com foco em disponibilidade. Liderança de equipe de TI, expansão e modernização. TCP/IP, BGP, OSPF, MPLS, SD-WAN, firewalls, IDS/IPS e ZTNA.',
+    },
+  },
+  {
+    org: 'XoHub',
+    tags: ['Python', 'PySide6', 'React', 'Prisma', 'PostgreSQL'],
+    en: {
+      role: 'Full Stack Developer',
+      period: '2025 — 2026',
+      location: 'Independent product',
+      detail:
+        'Module hub for Path of Exile 1 and 2: a Python/PySide6 desktop overlay and a React web panel to unlock modules by subscription. Price check, trade regex, farms, timeless jewels, and a Node/Prisma/PostgreSQL API with 1–3 month billing cycles.',
+    },
+    pt: {
+      role: 'Desenvolvedor Full Stack',
+      period: '2025 — 2026',
+      location: 'Produto próprio',
+      detail:
+        'Hub de módulos para Path of Exile 1 e 2: overlay desktop em Python/PySide6 e painel web em React para liberar módulos por assinatura. Price check, regex de trade, farms, timeless jewels e API Node/Prisma/PostgreSQL com ciclo de 1 a 3 meses.',
+    },
+  },
+  {
+    org: 'XoMacro',
+    tags: ['C#', '.NET 8', 'WinForms'],
+    en: {
+      role: 'Desktop Developer',
+      period: '2026',
+      location: 'Independent product',
+      detail:
+        'Windows keyboard and mouse recorder/player in C# / .NET 8. Macro library, global hotkeys, process targeting, speed control, on-screen watermark and a self-contained publish through build 62.',
+    },
+    pt: {
+      role: 'Desenvolvedor Desktop',
+      period: '2026',
+      location: 'Produto próprio',
+      detail:
+        'Gravador e repetidor de teclado e mouse para Windows em C# / .NET 8. Biblioteca de macros, hotkeys globais, alvo por processo, controle de velocidade, watermark na tela e publicação autocontida até a build 62.',
     },
   },
   {

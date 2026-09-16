@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { profile } from '../data/content'
 import { useLang } from '../i18n/LanguageContext'
 import LangSwitch from './LangSwitch'
+import CvDownload from './CvDownload'
 
 export default function Nav() {
   const { pathname } = useLocation()
@@ -35,13 +36,7 @@ export default function Nav() {
             </a>
           ))}
           <LangSwitch />
-          <a
-            href={profile.cv}
-            download
-            className="btn-acid relative z-50 shrink-0 rounded-full border px-3.5 py-1.5 font-semibold tracking-[0.14em]"
-          >
-            CV
-          </a>
+          <CvDownload variant="nav" />
         </nav>
       </div>
     </header>

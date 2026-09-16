@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Local Word drafts — site only serves the final PDFs
+cv/
+*.docx
+
 .vscode/*
 !.vscode/extensions.json
 .idea
