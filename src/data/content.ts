@@ -10,8 +10,8 @@ export const profile = {
   linkedin: 'https://linkedin.com/in/julionev10',
   github: 'https://github.com/lionev',
   cv: {
-    pt: '/Julio_Jorge.pdf',
-    en: '/Julio_Jorge_Resume.pdf',
+    pt: '/JulioJorge.pdf',
+    en: '/JulioJorgeResume.pdf',
   },
   english: 'A2',
 }
@@ -45,7 +45,7 @@ export const copy = {
     work: {
       kicker: 'Selected work',
       title: 'What I ship',
-      aside: 'Four real products — overlay, bot, macro, and a published fork.',
+      aside: 'Six real products — marketplace, this site, overlay, bot, macro, and a published fork.',
     },
     more: 'Also shipped',
     experience: {
@@ -66,7 +66,7 @@ export const copy = {
       kicker: 'About',
       title: 'From help desk to',
       titleItalic: 'product',
-      p1: 'I started fixing machines at a city hall and a transit consortium. Then came N1–N3 support, ERP, and Active Directory. I shipped internal systems at IASSEPE — and, in parallel, I build tools that a gaming community actually opens every day.',
+      p1: 'I started fixing machines at a city hall and a transit consortium. Then came N1–N3 support, ERP, and Active Directory. At IASSEPE I was the sole developer of the intranet — front-end, back-end, database and deployment — and of a Google Apps Script system for spreadsheets and files. In parallel, I build tools that a gaming community actually opens every day.',
       p2: 'That mix matters: I know what breaks in production, what a non-technical user needs to see on screen, and how an overlay or a payment webhook behaves when nobody is watching.',
       education: 'Education',
     },
@@ -81,6 +81,8 @@ export const copy = {
       repo: 'Upstream repo',
       highlights: 'Highlights',
       stack: 'Stack',
+      prevShot: 'Previous screenshot',
+      nextShot: 'Next screenshot',
     },
     footer: 'Built with React · Tailwind · Motion',
   },
@@ -112,7 +114,7 @@ export const copy = {
     work: {
       kicker: 'Projetos',
       title: 'O que eu entrego',
-      aside: 'Quatro produtos reais — overlay, bot, macro e um fork publicado.',
+      aside: 'Seis produtos reais — marketplace, este site, overlay, bot, macro e um fork publicado.',
     },
     more: 'Também publiquei',
     experience: {
@@ -133,7 +135,7 @@ export const copy = {
       kicker: 'Sobre',
       title: 'Do help desk ao',
       titleItalic: 'produto',
-      p1: 'Comecei consertando máquina em prefeitura e consórcio de transporte. Passei por suporte N1–N3, ERP e Active Directory. Entreguei sistemas internos no IASSEPE — e, em paralelo, construo ferramentas que a comunidade de jogos realmente abre todo dia.',
+      p1: 'Comecei consertando máquina em prefeitura e consórcio de transporte. Passei por suporte N1–N3, ERP e Active Directory. No IASSEPE fui o único desenvolvedor da intranet — front-end, back-end, banco de dados e implantação — e de um sistema em Google Apps Script para planilhas e arquivos. Em paralelo, construo ferramentas que a comunidade de jogos realmente abre todo dia.',
       p2: 'Essa mistura importa: sei o que quebra em produção, o que um usuário leigo precisa ver na tela, e como um overlay ou um webhook de pagamento se comporta quando não tem ninguém olhando.',
       education: 'Formação',
     },
@@ -148,6 +150,8 @@ export const copy = {
       repo: 'Repositório original',
       highlights: 'Destaques',
       stack: 'Stack',
+      prevShot: 'Print anterior',
+      nextShot: 'Próximo print',
     },
     footer: 'Feito com React · Tailwind · Motion',
   },
@@ -162,11 +166,116 @@ type ProjectText = {
 
 export const featured = [
   {
-    slug: 'xohub',
+    slug: 'navo',
     number: '01',
+    name: 'NAVO',
+    year: '2026',
+    stack: ['Next.js 16', 'React 19', 'TypeScript', 'Prisma', 'PostgreSQL', 'Mercado Pago', 'Zustand'],
+    live: null as string | null,
+    repo: null as string | null,
+    accent: '#e05a4f',
+    gallery: [
+      {
+        src: '/shots/navo.png',
+        en: 'Home — search by place, category and date',
+        pt: 'Início — busca por lugar, categoria e data',
+      },
+      {
+        src: '/shots/navo-studio.png',
+        en: 'Studio page — services, deposit and lock a slot',
+        pt: 'Página do espaço — serviços, sinal e trava de horário',
+      },
+      {
+        src: '/shots/navo-agendar.png',
+        en: 'Booking — pick a time and continue to PIX',
+        pt: 'Agendar — escolhe o horário e segue para o PIX',
+      },
+    ],
+    text: {
+      en: {
+        kicker: 'Marketplace · Agenda + PIX',
+        summary:
+          'A booking marketplace for tattoo, barber, brows, hair and aesthetics. Search nearby, lock a slot with a PIX deposit, and run the shop from an owner panel.',
+        body: [
+          'NAVO is a local marketplace: the customer finds a studio by place, category and date, picks a service and pays a deposit on PIX so the slot stays locked. The shop sees the day, the team and the money in one panel.',
+          'On the public side: geo search (street, neighborhood, CEP and “use my location”), categories, ratings and a deposit from R$15. Auth covers sign-up, login, password reset, customer and owner roles. Appointments go through book → pay → confirm.',
+          'On the shop side: services, hours, team, products, daily agenda and PIX payouts. Payments talk to Mercado Pago (with a sandbox PIX when the token is missing). Stack: Next.js 16, React 19, Zustand, Prisma + PostgreSQL, JWT/jose and bcrypt.',
+        ],
+        highlights: [
+          'Local-only for now — not published; shops in São Paulo',
+          'PIX deposit + webhook + owner payouts',
+          'Geo search, CEP lookup and nearby sort',
+          'Owner dashboard: operations, finance and daily agenda',
+        ],
+      } satisfies ProjectText,
+      pt: {
+        kicker: 'Marketplace · Agenda + PIX',
+        summary:
+          'Marketplace de agenda para tatuagem, barbeiro, sobrancelha, cabelo e estética. Busca perto de você, trava o horário com sinal no PIX e o dono opera no painel.',
+        body: [
+          'O NAVO é um marketplace local: o cliente acha um espaço por lugar, categoria e data, escolhe o serviço e paga um sinal no PIX para o horário ficar travado. O estabelecimento vê o dia, a equipe e o dinheiro num painel só.',
+          'No lado público: busca por geo (rua, bairro, CEP e “usar minha localização”), categorias, nota e sinal a partir de R$ 15. Auth cobre cadastro, login, redefinição de senha, papéis de cliente e dono. O fluxo é marcar → pagar → confirmar.',
+          'No lado do espaço: serviços, horários, equipe, produtos, agenda do dia e saque PIX. Pagamento fala com Mercado Pago (e um PIX sandbox quando o token não está ligado). Stack: Next.js 16, React 19, Zustand, Prisma + PostgreSQL, JWT/jose e bcrypt.',
+        ],
+        highlights: [
+          'Ainda só em ambiente local — sem publicar; espaços em São Paulo',
+          'Sinal no PIX + webhook + saque do dono',
+          'Busca por geo, CEP e ordenação por proximidade',
+          'Painel do dono: operação, financeiro e agenda do dia',
+        ],
+      } satisfies ProjectText,
+    },
+  },
+  {
+    slug: 'portfolio',
+    number: '02',
+    name: 'Portfolio',
+    year: '2026',
+    stack: ['React 19', 'TypeScript', 'Vite', 'Tailwind', 'Motion', 'Vercel'],
+    live: 'https://juliojorge.dev',
+    repo: 'https://github.com/lionev/Portfolio',
+    accent: '#efeae0',
+    text: {
+      en: {
+        kicker: 'Personal site · juliojorge.dev',
+        summary:
+          'This site: a bilingual portfolio in React, with selected work, experience and a CV download in Portuguese or English.',
+        body: [
+          'I built and shipped this portfolio as a live product at juliojorge.dev. It is not a template: the copy, the project pages and the language switch are written for how I actually work.',
+          'The visitor can read the site in Portuguese or English, open each product in its own page, and download the final PDF résumé after choosing a language — independent of the page language.',
+          'Stack: React 19, TypeScript, Vite, Tailwind CSS and Motion. Live at juliojorge.dev.',
+        ],
+        highlights: [
+          'Live at juliojorge.dev',
+          'Portuguese and English, with a CV picker that does not follow the site language',
+          'Project pages for NAVO, XoHub, XoMacro and the rest of the work',
+          'React 19, Vite, Tailwind and Motion',
+        ],
+      } satisfies ProjectText,
+      pt: {
+        kicker: 'Site pessoal · juliojorge.dev',
+        summary:
+          'Este site: um portfólio bilíngue em React, com projetos, experiência e download do currículo em português ou inglês.',
+        body: [
+          'Eu construí e publiquei este portfólio como produto no ar em juliojorge.dev. Não é um template: o texto, as páginas de projeto e a troca de idioma foram escritos para o jeito que eu trabalho.',
+          'O visitante lê o site em português ou inglês, abre cada produto na própria página e baixa o PDF final do currículo depois de escolher o idioma — independente do idioma da página.',
+          'Stack: React 19, TypeScript, Vite, Tailwind CSS e Motion. No ar em juliojorge.dev.',
+        ],
+        highlights: [
+          'No ar em juliojorge.dev',
+          'Português e inglês, com seletor de CV que não segue o idioma do site',
+          'Páginas de projeto para NAVO, XoHub, XoMacro e o restante do trabalho',
+          'React 19, Vite, Tailwind e Motion',
+        ],
+      } satisfies ProjectText,
+    },
+  },
+  {
+    slug: 'xohub',
+    number: '03',
     name: 'XoHub',
     year: '2025–26',
-    stack: ['Python', 'PySide6', 'React', 'Node', 'Prisma', 'PostgreSQL'],
+    stack: ['Python', 'PySide6', 'React', 'TypeScript', 'Node', 'Prisma', 'PostgreSQL'],
     live: null as string | null,
     repo: null as string | null,
     accent: '#d4ff3f',
@@ -207,10 +316,10 @@ export const featured = [
   },
   {
     slug: 'pkmdbot',
-    number: '02',
+    number: '04',
     name: 'PKMDBOT',
     year: '2024–26',
-    stack: ['React', 'TypeScript', 'Node', 'Mercado Pago', 'Python', 'OpenCV'],
+    stack: ['React', 'TypeScript', 'Node', 'Mercado Pago', 'Python', 'OpenCV', 'PyInstaller'],
     live: 'https://xod.vercel.app',
     repo: null as string | null,
     accent: '#7dd3fc',
@@ -251,7 +360,7 @@ export const featured = [
   },
   {
     slug: 'xomacro',
-    number: '03',
+    number: '05',
     name: 'XoMacro',
     year: '2026',
     stack: ['C#', '.NET 8', 'WinForms', 'Hotkeys', 'Input simulation'],
@@ -295,7 +404,7 @@ export const featured = [
   },
   {
     slug: 'poeredux',
-    number: '04',
+    number: '06',
     name: 'PoeRedux',
     year: '2026',
     stack: ['C#', 'WPF', '.NET', 'LibGGPK3', 'JSON patches'],
@@ -342,7 +451,7 @@ export const featured = [
 export const moreWork = [
   {
     name: 'XoBot',
-    stack: 'Python · Tkinter · Twitch API',
+    stack: 'Python · Tkinter · Twitch API · OAuth · Google Apps Script',
     href: 'https://github.com/lionev/XoBot',
     blurb: {
       en: 'Twitch bot manager with OAuth, Helix, IRC and automatic token refresh.',
@@ -381,20 +490,20 @@ export const moreWork = [
 export const experience = [
   {
     org: 'IASSEPE',
-    tags: ['React 19', 'TypeScript', 'Node.js', 'Prisma', 'LDAP'],
+    tags: ['React 19', 'TypeScript', 'Node.js', 'Prisma', 'LDAP', 'Apps Script'],
     en: {
       role: 'Full Stack Developer',
       period: 'Mar 2026 — Jul 2026',
       location: 'Pernambuco',
       detail:
-        'Internal systems for public service, end to end: SPAs with React 19, TypeScript, Vite and Tailwind; REST APIs with Node.js, Express, JWT, LDAP and PostgreSQL + Prisma.',
+        'Sole developer of the institutional intranet — front-end, back-end, database and deployment: SPAs with React 19, TypeScript, Vite and Tailwind; REST APIs with Node.js, Express, JWT, LDAP and PostgreSQL + Prisma. I also designed and deployed a Google Apps Script system to manage changes in spreadsheets and files on Google Sheets and Google Drive.',
     },
     pt: {
       role: 'Desenvolvedor Full Stack',
       period: 'Mar 2026 — Jul 2026',
       location: 'Pernambuco',
       detail:
-        'Sistemas internos para o serviço público, de ponta a ponta: SPAs com React 19, TypeScript, Vite e Tailwind; APIs REST com Node.js, Express, JWT, LDAP e PostgreSQL + Prisma.',
+        'Desenvolvimento individual da intranet institucional — front-end, back-end, banco de dados e implantação: SPAs com React 19, TypeScript, Vite e Tailwind; APIs REST com Node.js, Express, JWT, LDAP e PostgreSQL + Prisma. Também desenvolvi e implantei um sistema em Google Apps Script para gerenciar mudanças em planilhas e arquivos no Google Sheets e no Google Drive.',
     },
   },
   {
@@ -416,8 +525,44 @@ export const experience = [
     },
   },
   {
+    org: 'NAVO',
+    tags: ['Next.js 16', 'React 19', 'TypeScript', 'Prisma', 'PostgreSQL', 'Mercado Pago'],
+    en: {
+      role: 'Full Stack Developer',
+      period: '2026',
+      location: 'Independent product',
+      detail:
+        'Booking marketplace for tattoo, barber, brows, hair and aesthetics. Geo search, PIX deposit to lock a slot, Mercado Pago webhooks, and an owner panel for services, team, daily agenda and payouts. Next.js 16, React 19, Prisma and PostgreSQL.',
+    },
+    pt: {
+      role: 'Desenvolvedor Full Stack',
+      period: '2026',
+      location: 'Produto próprio',
+      detail:
+        'Marketplace de agenda para tatuagem, barbeiro, sobrancelha, cabelo e estética. Busca por geo, sinal no PIX para travar o horário, webhook do Mercado Pago e painel do dono com serviços, equipe, agenda do dia e saques. Next.js 16, React 19, Prisma e PostgreSQL.',
+    },
+  },
+  {
+    org: 'Portfolio',
+    tags: ['React 19', 'TypeScript', 'Vite', 'Tailwind', 'Motion'],
+    en: {
+      role: 'Front-End Developer',
+      period: '2026',
+      location: 'juliojorge.dev',
+      detail:
+        'Bilingual personal site in React 19, TypeScript, Vite, Tailwind and Motion. Selected work, experience and a PDF résumé download in Portuguese or English, independent of the page language.',
+    },
+    pt: {
+      role: 'Desenvolvedor Front-End',
+      period: '2026',
+      location: 'juliojorge.dev',
+      detail:
+        'Site pessoal bilíngue em React 19, TypeScript, Vite, Tailwind e Motion. Projetos, experiência e download do currículo em PDF em português ou inglês, independente do idioma da página.',
+    },
+  },
+  {
     org: 'XoHub',
-    tags: ['Python', 'PySide6', 'React', 'Prisma', 'PostgreSQL'],
+    tags: ['Python', 'PySide6', 'React', 'Node', 'Prisma', 'PostgreSQL'],
     en: {
       role: 'Full Stack Developer',
       period: '2025 — 2026',
@@ -576,6 +721,7 @@ export const skillGroups = [
       'Prisma',
       'JWT',
       'LDAP',
+      'Google Apps Script',
     ],
   },
   {

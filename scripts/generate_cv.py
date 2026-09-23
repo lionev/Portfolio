@@ -28,8 +28,7 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "cv"
-DOWNLOADS = Path.home() / "Downloads"
-PUBLIC = ROOT / "public"
+DOWNLOADS = Path.home() / "Downloads" / "Julio_Jorge" / "modelo-colunas"
 FONTS = Path(r"C:\Windows\Fonts")
 
 SIDEBAR_W = 3100  # twips
@@ -46,9 +45,10 @@ def jobs_pt() -> list[dict]:
             "title": "Desenvolvedor Full Stack  —  IASSEPE  ·  mar/2026 – jul/2026  ·  5 meses",
             "subtitle": "Instituto de Atenção à Saúde e Bem-estar dos Servidores do Estado de Pernambuco",
             "bullets": [
-                "Desenvolvimento de sistemas internos para o serviço público, de ponta a ponta: SPAs com React 19, TypeScript, Vite e Tailwind CSS no front-end; APIs REST com Node.js, Express, JWT, LDAP e PostgreSQL + Prisma no back-end.",
+                "Desenvolvimento individual da intranet institucional — front-end, back-end, banco de dados e implantação: SPAs com React 19, TypeScript, Vite e Tailwind CSS no front-end; APIs REST com Node.js, Express, JWT, LDAP e PostgreSQL + Prisma no back-end.",
+                "Sistema em Google Apps Script, também desenvolvido e implantado por mim, para gerenciar mudanças em planilhas e arquivos no Google Sheets e no Google Drive.",
             ],
-            "skills": "React 19 · TypeScript · Vite · Tailwind CSS · Radix UI · shadcn/ui · React Hook Form · Zod · Node.js · Express · JWT · LDAP · PostgreSQL · Prisma",
+            "skills": "React 19 · TypeScript · Vite · Tailwind CSS · Radix UI · shadcn/ui · React Hook Form · Zod · Node.js · Express · JWT · LDAP · PostgreSQL · Prisma · Google Apps Script · Google Sheets · Google Drive",
         },
         {
             "title": "Gerente de Redes  —  IASSEPE  ·  jun/2025 – mar/2026  ·  10 meses",
@@ -62,6 +62,26 @@ def jobs_pt() -> list[dict]:
             "skills": "TCP/IP · BGP · OSPF · MPLS · SD-WAN · Firewall · IDS/IPS · ZTNA · Virtualização · Gestão de infraestrutura · Liderança de equipe",
         },
         {
+            "title": "Desenvolvedor Full Stack  —  NAVO  ·  2026  ·  Produto próprio",
+            "subtitle": "Marketplace de agenda com sinal no PIX — tatuagem, barbeiro, sobrancelha, cabelo e estética",
+            "bullets": [
+                "Marketplace local: o cliente busca por lugar, categoria e data, escolhe o serviço e trava o horário com um sinal no PIX.",
+                "Painel do dono com serviços, horários, equipe, agenda do dia e saque PIX; pagamentos via Mercado Pago, com webhook e sandbox.",
+                "Autenticação com papéis de cliente e dono, busca por geo/CEP e ordenação por proximidade.",
+                "Desenvolvimento auxiliado por IA generativa na escrita, revisão e iteração do código.",
+            ],
+            "skills": "Next.js 16 · React 19 · TypeScript · Prisma · PostgreSQL · Mercado Pago · Zustand · IA generativa",
+        },
+        {
+            "title": "Desenvolvedor Front-End  —  Portfólio  ·  2026  ·  juliojorge.dev",
+            "subtitle": "Site pessoal bilíngue no ar",
+            "bullets": [
+                "Portfólio em React 19, TypeScript, Vite, Tailwind CSS e Motion, no ar em juliojorge.dev.",
+                "Idioma português/inglês e download do currículo em PDF com escolha de idioma independente da página.",
+            ],
+            "skills": "React 19 · TypeScript · Vite · Tailwind CSS · Motion · Vercel",
+        },
+        {
             "title": "Desenvolvedor Full Stack  —  XoHub  ·  2025–2026  ·  Produto próprio",
             "subtitle": "Hub de módulos para Path of Exile 1 e 2 — overlay desktop e painel web por assinatura",
             "bullets": [
@@ -69,8 +89,9 @@ def jobs_pt() -> list[dict]:
                 "Cliente com Cluster Jewels, regex de vendor/stash, PoB Trade Links, Blight, Farms com Atlas, Timeless Jewels, Fast Leveling e Auto Flask no PoE 2.",
                 "Price check que lê o item na tela, consulta o trade oficial e o poe.ninja e abre a busca com filtros reais, com limite de requisições e cache.",
                 "API Node.js/Express com Prisma e PostgreSQL; cada módulo pode ser adquirido isoladamente, em ciclos de 1 a 3 meses, com atualização automática via version.json.",
+                "Desenvolvimento auxiliado por IA generativa na escrita, revisão e iteração do código.",
             ],
-            "skills": "Python 3 · PySide6 · React · TypeScript · Vite · Tailwind CSS · Node.js · Express · Prisma · PostgreSQL",
+            "skills": "Python 3 · PySide6 · React · TypeScript · Vite · Tailwind CSS · Node.js · Express · Prisma · PostgreSQL · IA generativa",
         },
         {
             "title": "Desenvolvedor Desktop  —  XoMacro  ·  2026  ·  Produto próprio",
@@ -79,8 +100,9 @@ def jobs_pt() -> list[dict]:
                 "Aplicativo Windows com biblioteca de macros, disparo por tecla ou botão do mouse, foco em processo específico e repetição por contagem, ao manter pressionado ou em loop infinito.",
                 "Passos combináveis (combo, texto, espera, clique) ou linha do tempo de eventos gravados, com retomada por estágio e velocidade de 0,25× a 3×.",
                 "Hotkeys globais, watermark de status na tela, bandeja do sistema, DPI por monitor, temas claro/escuro e publicação autocontida em net8.0-windows até a build 62.",
+                "Desenvolvimento auxiliado por IA generativa na escrita, revisão e iteração do código.",
             ],
-            "skills": "C# · .NET 8 · WinForms · Hotkeys · Simulação de input",
+            "skills": "C# · .NET 8 · WinForms · Hotkeys · Simulação de input · IA generativa",
         },
         {
             "title": "Desenvolvedor Full Stack  —  XoD (PKMDBOT)  ·  2024–2026  ·  Produto próprio",
@@ -89,8 +111,9 @@ def jobs_pt() -> list[dict]:
                 "Aplicação web com seleção dinâmica de planos conforme o status do personagem (novo, teste ativo, teste expirado ou assinante).",
                 "Integração com Mercado Pago (Preference API e webhook), Google Sheets como base e sistema de indicação validado no front-end e no back-end.",
                 "Cliente desktop (XoD-Bot) com automação por visão de tela, Mini HUD nativo e distribuição Windows via PyInstaller.",
+                "Desenvolvimento auxiliado por IA generativa na escrita, revisão e iteração do código.",
             ],
-            "skills": "React · TypeScript · Node.js · Express · Mercado Pago · Python 3 · OpenCV · CustomTkinter · PyInstaller",
+            "skills": "React · TypeScript · Node.js · Express · Mercado Pago · Python 3 · OpenCV · CustomTkinter · PyInstaller · IA generativa",
         },
         {
             "title": "Desenvolvedor  —  XoBot Twitch Manager  ·  Produto próprio",
@@ -98,8 +121,9 @@ def jobs_pt() -> list[dict]:
             "bullets": [
                 "Gerenciador de bots para Twitch com interface em Python, OAuth 2.0, Helix API e IRC.",
                 "Back-end remoto via Google Apps Script e Google Sheets para onboarding e renovação automática de tokens, com distribuição em executável Windows.",
+                "Desenvolvimento auxiliado por IA generativa na escrita, revisão e iteração do código.",
             ],
-            "skills": "Python 3 · Tkinter · asyncio · Twitch API · OAuth 2.0 · Google Apps Script · PyInstaller",
+            "skills": "Python 3 · Tkinter · asyncio · Twitch API · OAuth 2.0 · Google Apps Script · PyInstaller · IA generativa",
         },
         {
             "title": "Analista de Suporte Júnior  —  Diário de Pernambuco  ·  jul/2024 – mar/2025  ·  9 meses",
@@ -147,9 +171,10 @@ def jobs_en() -> list[dict]:
             "title": "Full Stack Developer  —  IASSEPE  ·  Mar/2026 – Jul/2026  ·  5 months",
             "subtitle": "Institute for Health Care and Well-being of Civil Servants of the State of Pernambuco",
             "bullets": [
-                "Internal systems for public service, end to end: SPAs with React 19, TypeScript, Vite and Tailwind CSS on the front-end; REST APIs with Node.js, Express, JWT, LDAP and PostgreSQL + Prisma on the back-end.",
+                "Sole developer of the institutional intranet — front-end, back-end, database and deployment: SPAs with React 19, TypeScript, Vite and Tailwind CSS on the front-end; REST APIs with Node.js, Express, JWT, LDAP and PostgreSQL + Prisma on the back-end.",
+                "Google Apps Script system, also designed and deployed by me, to manage changes in spreadsheets and files on Google Sheets and Google Drive.",
             ],
-            "skills": "React 19 · TypeScript · Vite · Tailwind CSS · Radix UI · shadcn/ui · React Hook Form · Zod · Node.js · Express · JWT · LDAP · PostgreSQL · Prisma",
+            "skills": "React 19 · TypeScript · Vite · Tailwind CSS · Radix UI · shadcn/ui · React Hook Form · Zod · Node.js · Express · JWT · LDAP · PostgreSQL · Prisma · Google Apps Script · Google Sheets · Google Drive",
         },
         {
             "title": "Network Manager  —  IASSEPE  ·  Jun/2025 – Mar/2026  ·  10 months",
@@ -163,6 +188,26 @@ def jobs_en() -> list[dict]:
             "skills": "TCP/IP · BGP · OSPF · MPLS · SD-WAN · Firewall · IDS/IPS · ZTNA · Virtualization · Infrastructure management · Team leadership",
         },
         {
+            "title": "Full Stack Developer  —  NAVO  ·  2026  ·  Independent product",
+            "subtitle": "Booking marketplace with a PIX deposit — tattoo, barber, brows, hair and aesthetics",
+            "bullets": [
+                "Local marketplace: the customer searches by place, category and date, picks a service and locks the slot with a PIX deposit.",
+                "Owner panel for services, hours, team, daily agenda and PIX payouts; Mercado Pago payments with webhook and sandbox.",
+                "Auth with customer and owner roles, geo/CEP search and nearby sort.",
+                "Generative AI used as a development aid for writing, reviewing and iterating on the code.",
+            ],
+            "skills": "Next.js 16 · React 19 · TypeScript · Prisma · PostgreSQL · Mercado Pago · Zustand · Generative AI",
+        },
+        {
+            "title": "Front-End Developer  —  Portfolio  ·  2026  ·  juliojorge.dev",
+            "subtitle": "Live bilingual personal site",
+            "bullets": [
+                "Portfolio in React 19, TypeScript, Vite, Tailwind CSS and Motion, live at juliojorge.dev.",
+                "Portuguese/English and a PDF résumé download whose language does not follow the page language.",
+            ],
+            "skills": "React 19 · TypeScript · Vite · Tailwind CSS · Motion · Vercel",
+        },
+        {
             "title": "Full Stack Developer  —  XoHub  ·  2025–2026  ·  Independent product",
             "subtitle": "Module hub for Path of Exile 1 and 2 — desktop overlay and subscription web panel",
             "bullets": [
@@ -170,8 +215,9 @@ def jobs_en() -> list[dict]:
                 "Client modules include Cluster Jewels, vendor/stash regex, PoB Trade Links, Blight, Farms with Atlas, Timeless Jewels, Fast Leveling and Auto Flask on PoE 2.",
                 "Price check reads the item on screen, queries official trade and poe.ninja, and opens search with real filters, rate limiting and cache.",
                 "Node.js/Express API with Prisma and PostgreSQL; each module can be purchased on its own, on a 1 to 3 month cycle, with automatic updates via version.json.",
+                "Generative AI used as a development aid for writing, reviewing and iterating on the code.",
             ],
-            "skills": "Python 3 · PySide6 · React · TypeScript · Vite · Tailwind CSS · Node.js · Express · Prisma · PostgreSQL",
+            "skills": "Python 3 · PySide6 · React · TypeScript · Vite · Tailwind CSS · Node.js · Express · Prisma · PostgreSQL · Generative AI",
         },
         {
             "title": "Desktop Developer  —  XoMacro  ·  2026  ·  Independent product",
@@ -180,8 +226,9 @@ def jobs_en() -> list[dict]:
                 "Windows app with a macro library, triggers from a key or mouse button, focus on a specific process, and repeat by count, hold or infinite loop.",
                 "Each macro mixes steps (combo, text, wait, click) or a timeline of recorded events, with resume by stage and speed from 0.25× to 3×.",
                 "Global hotkeys, on-screen status watermark, system tray, per-monitor DPI, light/dark themes and a self-contained net8.0-windows publish through build 62.",
+                "Generative AI used as a development aid for writing, reviewing and iterating on the code.",
             ],
-            "skills": "C# · .NET 8 · WinForms · Hotkeys · Input simulation",
+            "skills": "C# · .NET 8 · WinForms · Hotkeys · Input simulation · Generative AI",
         },
         {
             "title": "Full Stack Developer  —  XoD (PKMDBOT)  ·  2024–2026  ·  Independent product",
@@ -190,8 +237,9 @@ def jobs_en() -> list[dict]:
                 "Web app with dynamic plan selection based on character status (new, active trial, expired trial or subscriber).",
                 "Mercado Pago integration (Preference API and webhook), Google Sheets as the store, and a referral system validated on both front-end and back-end.",
                 "Desktop client (XoD-Bot) with screen-vision automation, a native Mini HUD and Windows distribution via PyInstaller.",
+                "Generative AI used as a development aid for writing, reviewing and iterating on the code.",
             ],
-            "skills": "React · TypeScript · Node.js · Express · Mercado Pago · Python 3 · OpenCV · CustomTkinter · PyInstaller",
+            "skills": "React · TypeScript · Node.js · Express · Mercado Pago · Python 3 · OpenCV · CustomTkinter · PyInstaller · Generative AI",
         },
         {
             "title": "Developer  —  XoBot Twitch Manager  ·  Independent product",
@@ -199,8 +247,9 @@ def jobs_en() -> list[dict]:
             "bullets": [
                 "Twitch bot manager with a Python GUI, OAuth 2.0, Helix API and IRC.",
                 "Remote back-end via Google Apps Script and Google Sheets for onboarding and automatic token refresh, distributed as a Windows executable.",
+                "Generative AI used as a development aid for writing, reviewing and iterating on the code.",
             ],
-            "skills": "Python 3 · Tkinter · asyncio · Twitch API · OAuth 2.0 · Google Apps Script · PyInstaller",
+            "skills": "Python 3 · Tkinter · asyncio · Twitch API · OAuth 2.0 · Google Apps Script · PyInstaller · Generative AI",
         },
         {
             "title": "Junior Support Analyst  —  Diário de Pernambuco  ·  Jul/2024 – Mar/2025  ·  9 months",
@@ -322,8 +371,9 @@ CV = {
         "dev_h": "HABILIDADES — DESENVOLVIMENTO",
         "dev": (
             "JavaScript · TypeScript · React · Next.js · Node.js · Vite · Tailwind CSS · "
-            "Express · PostgreSQL · Prisma · JWT · LDAP · Python 3 · PySide6 · C# · .NET 8 · "
-            "WinForms · WPF · OpenCV · PyInstaller · Cypress"
+            "Express · PostgreSQL · Prisma · JWT · LDAP · Google Apps Script · Google Sheets · "
+            "Python 3 · PySide6 · C# · .NET 8 · "
+            "WinForms · WPF · OpenCV · PyInstaller · Cypress · IA generativa"
         ),
         "net_h": "HABILIDADES — REDES E SUPORTE",
         "net": (
@@ -360,8 +410,9 @@ CV = {
         "dev_h": "SKILLS — DEVELOPMENT",
         "dev": (
             "JavaScript · TypeScript · React · Next.js · Node.js · Vite · Tailwind CSS · "
-            "Express · PostgreSQL · Prisma · JWT · LDAP · Python 3 · PySide6 · C# · .NET 8 · "
-            "WinForms · WPF · OpenCV · PyInstaller · Cypress"
+            "Express · PostgreSQL · Prisma · JWT · LDAP · Google Apps Script · Google Sheets · "
+            "Python 3 · PySide6 · C# · .NET 8 · "
+            "WinForms · WPF · OpenCV · PyInstaller · Cypress · Generative AI"
         ),
         "net_h": "SKILLS — NETWORKING & SUPPORT",
         "net": (
@@ -772,17 +823,19 @@ def main():
         pdf_path = build_pdf(lang, OUT_DIR / data["pdf"])
         outputs.extend([docx_path, pdf_path])
 
-    PUBLIC.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(OUT_DIR / CV["pt"]["pdf"], PUBLIC / "Julio_Jorge.pdf")
-    shutil.copy2(OUT_DIR / CV["en"]["pdf"], PUBLIC / "Julio_Jorge_Resume.pdf")
-
+    DOWNLOADS.mkdir(parents=True, exist_ok=True)
+    copies = []
     for path in outputs:
-        shutil.copy2(path, DOWNLOADS / path.name)
+        dest = DOWNLOADS / path.name
+        shutil.copy2(path, dest)
+        copies.append(dest)
 
     print("Generated:")
     for path in outputs:
         print(" ", path, path.stat().st_size, "bytes")
-        print("  copy:", DOWNLOADS / path.name)
+    print("Downloads:")
+    for path in copies:
+        print(" ", path)
 
 
 if __name__ == "__main__":

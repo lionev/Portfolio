@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowUpRight } from 'lucide-react'
 import { featured } from '../data/content'
 import { useLang } from '../i18n/LanguageContext'
 import Cover from '../components/Cover'
+import ShotCarousel from '../components/ShotCarousel'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 
@@ -17,6 +18,7 @@ export default function ProjectPage() {
   }
 
   const text = project.text[lang]
+  const gallery = 'gallery' in project ? project.gallery : undefined
 
   return (
     <div className="relative z-10">
@@ -70,7 +72,11 @@ export default function ProjectPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}
         >
-          <Cover slug={project.slug} accent={project.accent} tall />
+          {gallery ? (
+            <ShotCarousel shots={gallery} accent={project.accent} />
+          ) : (
+            <Cover slug={project.slug} accent={project.accent} tall />
+          )}
         </motion.div>
 
         <div className="mt-16 grid gap-12 md:grid-cols-[1.2fr_0.8fr]">

@@ -5,6 +5,11 @@ type Props = {
 }
 
 const shots: Record<string, { src: string; alt: string; fit: string }> = {
+  navo: {
+    src: '/shots/navo.png',
+    alt: 'NAVO — marketplace de agenda com sinal no PIX',
+    fit: 'object-cover object-top',
+  },
   xohub: {
     src: '/shots/xohub.png',
     alt: 'XoHub — hub de módulos para Path of Exile',
@@ -45,9 +50,24 @@ export default function Cover({ slug, accent, tall }: Props) {
       className={`scanlines cover-grid relative overflow-hidden ${height}`}
       style={{ background: `radial-gradient(120% 90% at 80% 10%, ${accent}22, transparent 50%), #0c0e14` }}
     >
+      {slug === 'portfolio' && <SiteArt accent={accent} />}
       {slug === 'pkmdbot' && <BotArt accent={accent} />}
       {slug === 'poeredux' && <PatchArt accent={accent} />}
       <div className="from-ink-2 absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t to-transparent" />
+    </div>
+  )
+}
+
+function SiteArt({ accent }: { accent: string }) {
+  return (
+    <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+      <p className="font-serif text-6xl leading-none tracking-tight md:text-7xl">
+        Julio
+        <span className="text-mute/70 block italic">Jorge</span>
+      </p>
+      <p className="mt-4 text-[11px] tracking-[0.22em] uppercase" style={{ color: accent }}>
+        juliojorge.dev
+      </p>
     </div>
   )
 }

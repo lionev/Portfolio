@@ -31,8 +31,8 @@ export default function CvDownload({ variant }: { variant: Variant }) {
 
   const nav = variant === 'nav'
   const options = [
-    { href: profile.cv.pt, file: 'Julio_Jorge_Curriculo.pdf', label: t.cv.portuguese },
-    { href: profile.cv.en, file: 'Julio_Jorge_Resume.pdf', label: t.cv.english },
+    { href: profile.cv.pt, file: 'JulioJorge.pdf', label: t.cv.portuguese },
+    { href: profile.cv.en, file: 'JulioJorgeResume.pdf', label: t.cv.english },
   ]
 
   return (
