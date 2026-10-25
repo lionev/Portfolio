@@ -1,10 +1,16 @@
 import type { SimpleIcon } from 'simple-icons'
 import {
+  siCss,
   siDotnet,
+  siExpress,
+  siGit,
   siGoogleappsscript,
+  siHtml5,
+  siJavascript,
   siLinux,
   siNextdotjs,
   siNodedotjs,
+  siOpencv,
   siPostgresql,
   siPrisma,
   siPython,
@@ -29,21 +35,33 @@ export const introTechs: TechMark[] = [
   siVite,
   siTailwindcss,
   siNodedotjs,
+  siExpress,
   siPostgresql,
   siPrisma,
   siPython,
   siDotnet,
   salesforce,
   siGoogleappsscript,
+  siOpencv,
+  siGit,
+  siJavascript,
+  siHtml5,
+  siCss,
   siLinux,
 ]
 
 export function techColor(hex?: string) {
-  if (!hex) return '#d4ff3f'
+  if (!hex) return '#efeae0'
   const n = Number.parseInt(hex, 16)
-  const r = (n >> 16) & 255
-  const g = (n >> 8) & 255
-  const b = n & 255
+  let r = (n >> 16) & 255
+  let g = (n >> 8) & 255
+  let b = n & 255
   const luma = 0.2126 * r + 0.7152 * g + 0.0722 * b
-  return luma < 46 ? '#efeae0' : `#${hex}`
+  if (luma < 155) {
+    const lift = (155 - luma) / 155
+    r = Math.round(r + (239 - r) * lift)
+    g = Math.round(g + (234 - g) * lift)
+    b = Math.round(b + (224 - b) * lift)
+  }
+  return `rgb(${r}, ${g}, ${b})`
 }

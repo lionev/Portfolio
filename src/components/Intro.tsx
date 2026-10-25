@@ -3,19 +3,34 @@ import { ArrowDown } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { introTechs, techColor } from '../data/introTechs'
 import { useLang } from '../i18n/LanguageContext'
+import LangSwitch from './LangSwitch'
 
 const floaters = [
-  { i: 0, className: 'top-[16%] left-[3%]', size: 58 },
-  { i: 1, className: 'top-[12%] right-[5%]', size: 50 },
-  { i: 2, className: 'top-[40%] right-[4%]', size: 54 },
-  { i: 4, className: 'bottom-[24%] left-[4%]', size: 46 },
-  { i: 9, className: 'bottom-[26%] right-[7%]', size: 48 },
-  { i: 10, className: 'top-[58%] left-[4%]', size: 52 },
+  { i: 0, className: 'top-[11%] left-[3%]', size: 52 },
+  { i: 1, className: 'top-[9%] right-[5%]', size: 46 },
+  { i: 2, className: 'top-[7%] left-[20%]', size: 34 },
+  { i: 3, className: 'top-[8%] right-[20%]', size: 36 },
+  { i: 4, className: 'top-[22%] left-[2%]', size: 42 },
+  { i: 5, className: 'top-[24%] right-[3%]', size: 44 },
+  { i: 6, className: 'top-[26%] left-[13%]', size: 30 },
+  { i: 7, className: 'top-[28%] right-[14%]', size: 32 },
+  { i: 8, className: 'top-[40%] left-[4%]', size: 40 },
+  { i: 9, className: 'top-[42%] right-[5%]', size: 48 },
+  { i: 10, className: 'top-[54%] left-[2%]', size: 38 },
+  { i: 11, className: 'top-[56%] right-[3%]', size: 36 },
+  { i: 12, className: 'top-[66%] left-[10%]', size: 34 },
+  { i: 13, className: 'top-[68%] right-[11%]', size: 40 },
+  { i: 14, className: 'bottom-[16%] left-[4%]', size: 44 },
+  { i: 15, className: 'bottom-[14%] right-[6%]', size: 42 },
+  { i: 16, className: 'bottom-[20%] left-[22%]', size: 30 },
+  { i: 17, className: 'bottom-[18%] right-[22%]', size: 32 },
+  { i: 18, className: 'top-[18%] left-[28%]', size: 28 },
+  { i: 0, className: 'top-[16%] right-[28%]', size: 28 },
 ]
 
 const words = {
-  en: ['Full Stack', 'Trailhead', 'juliojorge.dev'],
-  pt: ['Full Stack', 'Trailhead', 'juliojorge.dev'],
+  en: ['Full Stack', 'Salesforce', 'juliojorge.dev'],
+  pt: ['Full Stack', 'Salesforce', 'juliojorge.dev'],
 }
 
 export default function Intro() {
@@ -106,7 +121,7 @@ export default function Intro() {
     if (!open) return
     const id = window.setInterval(() => {
       setWord((i) => (i + 1) % words[lang].length)
-    }, 900)
+    }, 2400)
     return () => window.clearInterval(id)
   }, [open, lang])
 
@@ -117,8 +132,6 @@ export default function Intro() {
       {open ? (
         <motion.div
           key="intro"
-          role="presentation"
-          aria-hidden
           className="fixed inset-0 z-[80] overflow-hidden bg-ink"
           exit={{
             y: '-110%',
@@ -148,19 +161,19 @@ export default function Intro() {
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           />
 
-          <div className="pointer-events-none absolute inset-0 hidden xl:block">
-            {floaters.map(({ i, className, size }) => {
-              const tech = introTechs[i]
+          <div className="pointer-events-none absolute inset-0 hidden md:block">
+            {floaters.map(({ i, className, size }, spot) => {
+              const tech = introTechs[i % introTechs.length]
               return (
                 <motion.div
-                  key={`float-${tech.title}`}
+                  key={`float-${spot}-${tech.title}`}
                   className={`absolute ${className}`}
                   initial={{ opacity: 0, scale: 0.6 }}
-                  animate={{ opacity: 0.22, scale: 1, y: [0, -10, 0] }}
+                  animate={{ opacity: 0.38, scale: 1, y: [0, -10, 0] }}
                   transition={{
-                    opacity: { delay: 0.35 + i * 0.08, duration: 0.6 },
-                    scale: { delay: 0.35 + i * 0.08, duration: 0.6 },
-                    y: { duration: 3.2 + (i % 4) * 0.3, repeat: Infinity, ease: 'easeInOut' },
+                    opacity: { delay: 0.2 + spot * 0.05, duration: 0.6 },
+                    scale: { delay: 0.2 + spot * 0.05, duration: 0.6 },
+                    y: { duration: 3.2 + (spot % 4) * 0.3, repeat: Infinity, ease: 'easeInOut' },
                   }}
                   style={{ color: techColor(tech.hex) }}
                 >
@@ -173,7 +186,7 @@ export default function Intro() {
           </div>
 
           <div className="relative flex h-full flex-col justify-between px-6 py-8 md:px-12 md:py-10">
-            <div className="flex items-start justify-between text-[11px] tracking-[0.32em] uppercase">
+            <div className="flex items-start justify-between gap-4 text-[11px] tracking-[0.32em] uppercase">
               <motion.span
                 className="text-acid"
                 initial={{ opacity: 0, x: -16 }}
@@ -182,14 +195,15 @@ export default function Intro() {
               >
                 JJ
               </motion.span>
-              <motion.span
-                className="text-mute"
+              <motion.div
+                className="flex items-center gap-4"
                 initial={{ opacity: 0, x: 16 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                {t.hero.role}
-              </motion.span>
+                <span className="text-mute hidden sm:inline">{t.hero.role}</span>
+                <LangSwitch />
+              </motion.div>
             </div>
 
             <div>
@@ -201,7 +215,7 @@ export default function Intro() {
                     initial={{ y: 16, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -16, opacity: 0 }}
-                    transition={{ duration: 0.35 }}
+                    transition={{ duration: 0.55 }}
                   >
                     {words[lang][word]}
                   </motion.p>
@@ -224,7 +238,7 @@ export default function Intro() {
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 1.4, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
               />
-              <div className="mt-7 flex max-w-xl flex-wrap items-center gap-2 md:gap-2.5">
+              <div className="mt-7 flex max-w-3xl flex-wrap items-center gap-2 md:gap-2.5">
                 {introTechs.map((tech, i) => (
                   <motion.div
                     key={tech.title}
