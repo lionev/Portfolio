@@ -37,6 +37,14 @@ export default function Contact() {
             >
               GitHub
             </Magnetic>
+            {profile.trailhead ? (
+              <Magnetic
+                href={profile.trailhead}
+                className="border-line hover:border-paper rounded-full border px-6 py-3 text-sm"
+              >
+                {t.contact.trailhead}
+              </Magnetic>
+            ) : null}
             <Magnetic
               href={profile.phoneHref}
               className="border-line hover:border-paper rounded-full border px-6 py-3 text-sm"

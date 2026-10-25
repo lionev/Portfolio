@@ -15,6 +15,8 @@ const marquee = [
   'BGP',
   'OpenCV',
   'WPF',
+  'Salesforce',
+  'Apex',
 ]
 
 export default function Skills() {
@@ -38,7 +40,7 @@ export default function Skills() {
           <p className="text-acid mb-3 text-[11px] tracking-[0.32em] uppercase">{t.stack.kicker}</p>
           <h2 className="font-serif mb-12 text-5xl tracking-tight md:text-6xl">{t.stack.title}</h2>
         </Reveal>
-        <div className="grid gap-10 md:grid-cols-3">
+        <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-4">
           {skillGroups.map((group, i) => (
             <Reveal key={group.key} delay={i * 0.08}>
               <div className="border-line rounded-2xl border p-6">

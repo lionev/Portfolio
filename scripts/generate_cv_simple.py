@@ -338,6 +338,8 @@ CV = {
         ],
         "courses_h": "CURSOS",
         "courses": [
+            "Dev Salesforce — Apex, Trigger, Flow e LWC  |  out/2026  |  Udemy · 5 horas",
+            "Salesforce na prática para administradores  |  out/2026  |  Udemy · 3,5 horas",
             "QA e Testes Automatizados  |  2024  |  Udemy — Cypress básico e intermediário",
             "Desenvolvedor Front-End  |  2024  |  Rocketseat — React, Java, NLWs",
         ],
@@ -389,6 +391,8 @@ CV = {
         ],
         "courses_h": "COURSES",
         "courses": [
+            "Salesforce developer — Apex, Trigger, Flow and LWC  |  Oct 2026  |  Udemy · 5 hours",
+            "Salesforce in practice for admins  |  Oct 2026  |  Udemy · 3.5 hours",
             "QA & automated testing  |  2024  |  Udemy — Cypress beginner and intermediate",
             "Front-End Developer  |  2024  |  Rocketseat — React, Java, NLWs",
         ],

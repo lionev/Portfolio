@@ -387,6 +387,8 @@ CV = {
         "edu_h": "EDUCAÇÃO",
         "edu": [
             ("Bacharelado em Sistemas da Informação", "UNINASSAU · 2024 · Concluído"),
+            ("Dev Salesforce — Apex, Flow e LWC", "Udemy · out/2026 · 5 horas"),
+            ("Salesforce na prática — administradores", "Udemy · out/2026 · 3,5 horas"),
             ("QA e Testes Automatizados", "Udemy · 2024 · Cypress básico e intermediário"),
             ("Desenvolvedor Front-End", "Rocketseat · 2024 · React, Java, NLWs"),
         ],
@@ -426,6 +428,8 @@ CV = {
         "edu_h": "EDUCATION",
         "edu": [
             ("B.Sc. in Information Systems", "UNINASSAU · 2024 · Completed"),
+            ("Salesforce dev — Apex, Flow and LWC", "Udemy · Oct 2026 · 5 hours"),
+            ("Salesforce in practice — admins", "Udemy · Oct 2026 · 3.5 hours"),
             ("QA & automated testing", "Udemy · 2024 · Cypress beginner and intermediate"),
             ("Front-End Developer", "Rocketseat · 2024 · React, Java, NLWs"),
         ],

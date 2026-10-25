@@ -9,6 +9,7 @@ export const profile = {
   phoneHref: 'tel:+5581986273135',
   linkedin: 'https://linkedin.com/in/julionev10',
   github: 'https://github.com/lionev',
+  trailhead: 'https://www.salesforce.com/trailblazer/profile',
   cv: {
     pt: '/JulioJorge.pdf',
     en: '/JulioJorgeResume.pdf',
@@ -34,6 +35,9 @@ export const copy = {
       choose: 'Choose a language',
       portuguese: 'Português',
       english: 'English',
+      trailhead: 'Salesforce',
+      trailheadShort: 'Salesforce',
+      trailheadTitle: 'Salesforce Trailhead profile',
     },
     hero: {
       open: 'Open to work',
@@ -60,6 +64,7 @@ export const copy = {
         Product: 'Product',
         Desktop: 'Desktop',
         Networks: 'Networks',
+        Salesforce: 'Salesforce',
       },
     },
     about: {
@@ -67,13 +72,15 @@ export const copy = {
       title: 'From help desk to',
       titleItalic: 'product',
       p1: 'I started fixing machines at a city hall and a transit consortium. Then came N1–N3 support, ERP, and Active Directory. At IASSEPE I was the sole developer of the intranet — front-end, back-end, database and deployment — and of a Google Apps Script system for spreadsheets and files. In parallel, I build tools that a gaming community actually opens every day.',
-      p2: 'That mix matters: I know what breaks in production, what a non-technical user needs to see on screen, and how an overlay or a payment webhook behaves when nobody is watching.',
+      p2: 'That mix matters: I know what breaks in production, what a non-technical user needs to see on screen, and how an overlay or a payment webhook behaves when nobody is watching. I am also studying Salesforce on Trailhead — Apex, Flow and LWC — and I keep the Trailblazer profile public.',
       education: 'Education',
+      certificate: 'View certificate',
     },
     contact: {
       kicker: 'Contact',
       title: 'Let’s talk',
-      body: 'Open to product, internal systems, and desktop tools. Send an email — I’ll reply.',
+      body: 'Open to product, internal systems, desktop tools, and Salesforce. Send an email — I’ll reply.',
+      trailhead: 'Salesforce',
     },
     project: {
       back: 'Back to work',
@@ -103,6 +110,9 @@ export const copy = {
       choose: 'Escolha o idioma',
       portuguese: 'Português',
       english: 'English',
+      trailhead: 'Salesforce',
+      trailheadShort: 'Salesforce',
+      trailheadTitle: 'Perfil Salesforce no Trailhead',
     },
     hero: {
       open: 'Aberto a oportunidades',
@@ -129,6 +139,7 @@ export const copy = {
         Product: 'Produto',
         Desktop: 'Desktop',
         Networks: 'Redes',
+        Salesforce: 'Salesforce',
       },
     },
     about: {
@@ -136,13 +147,15 @@ export const copy = {
       title: 'Do help desk ao',
       titleItalic: 'produto',
       p1: 'Comecei consertando máquina em prefeitura e consórcio de transporte. Passei por suporte N1–N3, ERP e Active Directory. No IASSEPE fui o único desenvolvedor da intranet — front-end, back-end, banco de dados e implantação — e de um sistema em Google Apps Script para planilhas e arquivos. Em paralelo, construo ferramentas que a comunidade de jogos realmente abre todo dia.',
-      p2: 'Essa mistura importa: sei o que quebra em produção, o que um usuário leigo precisa ver na tela, e como um overlay ou um webhook de pagamento se comporta quando não tem ninguém olhando.',
+      p2: 'Essa mistura importa: sei o que quebra em produção, o que um usuário leigo precisa ver na tela, e como um overlay ou um webhook de pagamento se comporta quando não tem ninguém olhando. Também estudo Salesforce no Trailhead — Apex, Flow e LWC — e mantenho o perfil Trailblazer público.',
       education: 'Formação',
+      certificate: 'Ver certificado',
     },
     contact: {
       kicker: 'Contato',
       title: 'Vamos conversar',
-      body: 'Aberto a produto, sistemas internos e ferramentas desktop. Manda um e-mail — respondo.',
+      body: 'Aberto a produto, sistemas internos, ferramentas desktop e Salesforce. Manda um e-mail — respondo.',
+      trailhead: 'Salesforce',
     },
     project: {
       back: 'Voltar aos projetos',
@@ -672,6 +685,17 @@ export const experience = [
 
 export const education = [
   {
+    place: 'Salesforce Trailhead',
+    en: {
+      title: 'Trailblazer profile — Apex, Flow and LWC',
+      period: 'In progress',
+    },
+    pt: {
+      title: 'Perfil Trailblazer — Apex, Flow e LWC',
+      period: 'Em andamento',
+    },
+  },
+  {
     place: 'UNINASSAU',
     en: {
       title: 'Bachelor’s in Information Systems',
@@ -680,6 +704,30 @@ export const education = [
     pt: {
       title: 'Bacharelado em Sistemas da Informação',
       period: '2024 · Concluída',
+    },
+  },
+  {
+    place: 'Udemy',
+    href: 'https://ude.my/UC-731c21a9-5f27-4087-b488-cd42d11c4fba',
+    en: {
+      title: 'Salesforce Developer — Apex, Trigger, Flow and LWC',
+      period: 'Oct 2026 · 5 hours',
+    },
+    pt: {
+      title: 'Dev Salesforce — Apex, Trigger, Flow e LWC',
+      period: 'Out 2026 · 5 horas',
+    },
+  },
+  {
+    place: 'Udemy',
+    href: 'https://ude.my/UC-2ddeb7f9-cdc5-40e7-bfce-055955fc0109',
+    en: {
+      title: 'Salesforce in practice — hands-on for admins',
+      period: 'Oct 2026 · 3.5 hours',
+    },
+    pt: {
+      title: 'Salesforce na prática — administradores',
+      period: 'Out 2026 · 3,5 horas',
     },
   },
   {
@@ -727,6 +775,10 @@ export const skillGroups = [
   {
     key: 'Desktop' as const,
     items: ['C# / .NET 8', 'Python 3', 'PySide6', 'WinForms', 'OpenCV', 'PyInstaller', 'WPF'],
+  },
+  {
+    key: 'Salesforce' as const,
+    items: ['Apex', 'Lightning Web Components', 'Flow', 'Triggers', 'Trailhead'],
   },
   {
     key: 'Networks' as const,

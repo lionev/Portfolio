@@ -3,6 +3,7 @@ import { profile } from '../data/content'
 import { useLang } from '../i18n/LanguageContext'
 import LangSwitch from './LangSwitch'
 import CvDownload from './CvDownload'
+import TrailheadLink from './TrailheadLink'
 
 export default function Nav() {
   const { pathname } = useLocation()
@@ -37,6 +38,7 @@ export default function Nav() {
           ))}
           <LangSwitch />
           <CvDownload variant="nav" />
+          <TrailheadLink variant="nav" />
         </nav>
       </div>
     </header>

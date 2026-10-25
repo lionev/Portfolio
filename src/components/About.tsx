@@ -31,6 +31,16 @@ export default function About() {
                   <h3 className="text-lg font-medium">{item[lang].title}</h3>
                   <p className="text-acid mt-1 text-sm">{item.place}</p>
                   <p className="text-mute mt-1 text-sm">{item[lang].period}</p>
+                  {('href' in item && item.href) || (item.place === 'Salesforce Trailhead' && profile.trailhead) ? (
+                    <a
+                      href={('href' in item && item.href) || profile.trailhead}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-acid mt-2 inline-block text-sm underline-offset-4 hover:underline"
+                    >
+                      {item.place === 'Salesforce Trailhead' ? t.contact.trailhead : t.about.certificate}
+                    </a>
+                  ) : null}
                 </li>
               ))}
             </ul>
