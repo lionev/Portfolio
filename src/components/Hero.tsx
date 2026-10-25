@@ -10,10 +10,10 @@ export default function Hero() {
   const { t } = useLang()
 
   return (
-    <section className="relative overflow-hidden px-5 pt-28 pb-20 md:px-8 md:pt-36 md:pb-28">
+    <section id="home" className="relative overflow-hidden px-5 pt-28 pb-20 md:px-8 md:pt-36 md:pb-28">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 flex items-center justify-between gap-4 text-[11px] tracking-[0.28em] uppercase">
-          <span className="text-mute">{profile.location}</span>
+          <span className="text-mute">{profile.handle}</span>
           <span className="flex items-center gap-2">
             <span className="bg-acid size-1.5 animate-pulse rounded-full" />
             <span className="hidden sm:inline">{t.hero.open}</span>
@@ -21,13 +21,13 @@ export default function Hero() {
         </div>
 
         <motion.h1
-          className="font-serif text-6xl leading-[0.9] tracking-[-0.04em] sm:text-8xl md:text-[9.5rem]"
+          className="font-serif flex flex-row flex-nowrap items-end gap-[0.28em] text-5xl leading-none tracking-[-0.04em] sm:text-7xl md:text-8xl lg:text-[7.5rem]"
           initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="block">Julio</span>
-          <span className="text-mute/80 block italic">Jorge</span>
+          <span className="pb-[0.06em]">Julio</span>
+          <span className="text-mute/80 pb-[0.06em] italic">Jorge</span>
         </motion.h1>
 
         <div className="mt-10 grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-end">

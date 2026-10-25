@@ -3,7 +3,7 @@ export type Lang = 'en' | 'pt'
 export const profile = {
   name: 'Julio Jorge',
   handle: 'lionev',
-  location: 'Recife, PE',
+  location: '',
   email: 'julionev10@gmail.com',
   phone: '+55 81 98627-3135',
   phoneHref: 'tel:+5581986273135',
@@ -22,6 +22,7 @@ export const copy = {
     metaDescription:
       'Julio Jorge — Full Stack Developer. Internal systems, desktop apps, and products for gaming communities.',
     nav: {
+      home: 'Home',
       work: 'Work',
       experience: 'Experience',
       stack: 'Stack',
@@ -30,13 +31,13 @@ export const copy = {
     },
     langLabel: 'Language',
     cv: {
-      short: 'CV',
-      download: 'Download CV',
+      short: 'Resume',
+      download: 'Download Resume',
       choose: 'Choose a language',
       portuguese: 'Português',
       english: 'English',
-      trailhead: 'Salesforce',
-      trailheadShort: 'Salesforce',
+      trailhead: 'Trailhead',
+      trailheadShort: 'Trailhead',
       trailheadTitle: 'Salesforce Trailhead profile',
     },
     hero: {
@@ -45,6 +46,9 @@ export const copy = {
       lead: 'I build tools people actually use — internal systems, desktop overlays, and live products.',
       body: 'I work end to end: React and Node in public service, Python and C# in desktop tools, and live products with real payments for gaming communities.',
       selected: 'Selected work',
+    },
+    intro: {
+      scroll: 'Scroll down',
     },
     work: {
       kicker: 'Selected work',
@@ -80,7 +84,7 @@ export const copy = {
       kicker: 'Contact',
       title: 'Let’s talk',
       body: 'Open to product, internal systems, desktop tools, and Salesforce. Send an email — I’ll reply.',
-      trailhead: 'Salesforce',
+      trailhead: 'Trailhead',
     },
     project: {
       back: 'Back to work',
@@ -97,6 +101,7 @@ export const copy = {
     metaDescription:
       'Julio Jorge — Desenvolvedor Full Stack. Sistemas internos, apps desktop e produtos para comunidades de jogos.',
     nav: {
+      home: 'Início',
       work: 'Projetos',
       experience: 'Experiência',
       stack: 'Stack',
@@ -105,13 +110,13 @@ export const copy = {
     },
     langLabel: 'Idioma',
     cv: {
-      short: 'CV',
-      download: 'Baixar CV',
+      short: 'Currículo',
+      download: 'Baixar currículo',
       choose: 'Escolha o idioma',
       portuguese: 'Português',
       english: 'English',
-      trailhead: 'Salesforce',
-      trailheadShort: 'Salesforce',
+      trailhead: 'Trailhead',
+      trailheadShort: 'Trailhead',
       trailheadTitle: 'Perfil Salesforce no Trailhead',
     },
     hero: {
@@ -120,6 +125,9 @@ export const copy = {
       lead: 'Eu construo ferramentas que as pessoas realmente usam — sistemas internos, overlays desktop e produtos no ar.',
       body: 'Atuo de ponta a ponta: React e Node no serviço público, Python e C# em ferramentas desktop, e produtos com pagamento real para comunidades de jogos.',
       selected: 'Ver projetos',
+    },
+    intro: {
+      scroll: 'Role para baixo',
     },
     work: {
       kicker: 'Projetos',
@@ -155,7 +163,7 @@ export const copy = {
       kicker: 'Contato',
       title: 'Vamos conversar',
       body: 'Aberto a produto, sistemas internos, ferramentas desktop e Salesforce. Manda um e-mail — respondo.',
-      trailhead: 'Salesforce',
+      trailhead: 'Trailhead',
     },
     project: {
       back: 'Voltar aos projetos',
@@ -615,14 +623,14 @@ export const experience = [
     en: {
       role: 'Junior Support Analyst',
       period: 'Jul 2024 — Mar 2025',
-      location: 'Recife',
+      location: 'Pernambuco',
       detail:
         'N1, N2 and N3 support through Help Desk. Commercial and industrial ERP rollout, technical reports and Active Directory support.',
     },
     pt: {
       role: 'Analista de Suporte Júnior',
       period: 'Jul 2024 — Mar 2025',
-      location: 'Recife',
+      location: 'Pernambuco',
       detail:
         'Suporte N1, N2 e N3 via Help Desk. Implantação de ERP comercial e industrial, pareceres técnicos e suporte a Active Directory.',
     },
@@ -651,14 +659,14 @@ export const experience = [
     en: {
       role: 'IT Intern',
       period: 'Mar 2020 — Feb 2022',
-      location: 'Recife',
+      location: 'Pernambuco',
       detail:
         'Desktop maintenance, network support and the corporate domain. Install and support third-party systems.',
     },
     pt: {
       role: 'Estagiário de TI',
       period: 'Mar 2020 — Fev 2022',
-      location: 'Recife',
+      location: 'Pernambuco',
       detail:
         'Manutenção de desktops, suporte à rede e ao domínio corporativo. Instalação e suporte de sistemas de terceiros.',
     },

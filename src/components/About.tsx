@@ -18,7 +18,7 @@ export default function About() {
             <p>{t.about.p1}</p>
             <p>{t.about.p2}</p>
             <p className="text-mute text-sm tracking-wide">
-              English {profile.english} · Recife · {profile.handle}
+              English {profile.english} · {profile.handle}
             </p>
           </div>
         </Reveal>

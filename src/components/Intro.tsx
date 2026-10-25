@@ -1,5 +1,6 @@
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
-import { useEffect, useState } from 'react'
+import { ArrowDown } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 import { introTechs, techColor } from '../data/introTechs'
 import { useLang } from '../i18n/LanguageContext'
 
@@ -12,46 +13,94 @@ const floaters = [
   { i: 10, className: 'top-[58%] left-[4%]', size: 52 },
 ]
 
-const HOLD_MS = 5000
 const words = {
-  en: ['Recife', 'Full Stack', 'Salesforce', 'juliojorge.dev'],
-  pt: ['Recife', 'Full Stack', 'Salesforce', 'juliojorge.dev'],
+  en: ['Full Stack', 'Trailhead', 'juliojorge.dev'],
+  pt: ['Full Stack', 'Trailhead', 'juliojorge.dev'],
 }
 
 export default function Intro() {
   const reduce = useReducedMotion()
   const { lang, t } = useLang()
   const [open, setOpen] = useState(() => !reduce)
-  const [count, setCount] = useState(0)
   const [word, setWord] = useState(0)
+  const closing = useRef(false)
+  const touchY = useRef<number | null>(null)
 
   const close = () => {
+    if (closing.current) return
+    closing.current = true
+    window.scrollTo(0, 0)
     setOpen(false)
-    document.body.style.overflow = ''
   }
 
   useEffect(() => {
-    if (reduce || !open) return
+    if (reduce) return
+
     document.body.style.overflow = 'hidden'
-    const done = window.setTimeout(close, HOLD_MS)
+    const pin = () => window.scrollTo(0, 0)
+    const block = (event: Event) => {
+      event.preventDefault()
+      pin()
+    }
+
+    if (open) {
+      const onWheel = (event: WheelEvent) => {
+        event.preventDefault()
+        if (event.deltaY > 8) close()
+      }
+
+      const onTouchStart = (event: TouchEvent) => {
+        touchY.current = event.touches[0]?.clientY ?? null
+      }
+
+      const onTouchMove = (event: TouchEvent) => {
+        event.preventDefault()
+        const start = touchY.current
+        const now = event.touches[0]?.clientY
+        if (start == null || now == null) return
+        if (start - now > 24) close()
+      }
+
+      const onKey = (event: KeyboardEvent) => {
+        if (event.key === 'ArrowDown' || event.key === 'PageDown' || event.key === ' ') {
+          event.preventDefault()
+          close()
+        }
+      }
+
+      window.addEventListener('wheel', onWheel, { passive: false })
+      window.addEventListener('touchstart', onTouchStart, { passive: true })
+      window.addEventListener('touchmove', onTouchMove, { passive: false })
+      window.addEventListener('keydown', onKey)
+
+      return () => {
+        window.removeEventListener('wheel', onWheel)
+        window.removeEventListener('touchstart', onTouchStart)
+        window.removeEventListener('touchmove', onTouchMove)
+        window.removeEventListener('keydown', onKey)
+      }
+    }
+
+    pin()
+    window.addEventListener('wheel', block, { passive: false })
+    window.addEventListener('touchmove', block, { passive: false })
+    window.addEventListener('scroll', pin, { passive: false })
+    const unlock = window.setTimeout(() => {
+      document.body.style.overflow = ''
+      window.removeEventListener('wheel', block)
+      window.removeEventListener('touchmove', block)
+      window.removeEventListener('scroll', pin)
+      pin()
+    }, 1100)
+
     return () => {
-      window.clearTimeout(done)
+      window.clearTimeout(unlock)
+      window.removeEventListener('wheel', block)
+      window.removeEventListener('touchmove', block)
+      window.removeEventListener('scroll', pin)
       document.body.style.overflow = ''
     }
   }, [open, reduce])
-
-  useEffect(() => {
-    if (!open) return
-    const started = performance.now()
-    let frame = 0
-    const tick = (now: number) => {
-      const p = Math.min(1, (now - started) / 4200)
-      setCount(Math.round(p * 100))
-      if (p < 1) frame = requestAnimationFrame(tick)
-    }
-    frame = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(frame)
-  }, [open])
 
   useEffect(() => {
     if (!open) return
@@ -72,8 +121,8 @@ export default function Intro() {
           aria-hidden
           className="fixed inset-0 z-[80] overflow-hidden bg-ink"
           exit={{
-            clipPath: 'inset(0 0 100% 0)',
-            transition: { duration: 0.85, ease: [0.76, 0, 0.24, 1] },
+            y: '-110%',
+            transition: { duration: 0.9, ease: [0.76, 0, 0.24, 1] },
           }}
         >
           <motion.div
@@ -158,24 +207,15 @@ export default function Intro() {
                   </motion.p>
                 </AnimatePresence>
               </div>
-              <div className="overflow-hidden">
+              <div className="overflow-hidden pb-[0.22em]">
                 <motion.h1
-                  className="font-serif text-7xl leading-[0.82] tracking-[-0.05em] sm:text-8xl md:text-[10rem]"
-                  initial={{ y: '120%', rotate: 4 }}
-                  animate={{ y: 0, rotate: 0 }}
+                  className="font-serif flex flex-row flex-nowrap items-end gap-[0.28em] text-5xl leading-none tracking-[-0.05em] sm:text-7xl md:text-8xl lg:text-[8rem]"
+                  initial={{ y: '120%' }}
+                  animate={{ y: 0 }}
                   transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  Julio
-                </motion.h1>
-              </div>
-              <div className="overflow-hidden">
-                <motion.h1
-                  className="text-mute/75 font-serif text-7xl leading-[0.82] tracking-[-0.05em] italic sm:text-8xl md:text-[10rem]"
-                  initial={{ y: '120%', rotate: -3 }}
-                  animate={{ y: 0, rotate: 0 }}
-                  transition={{ duration: 1, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  Jorge
+                  <span className="pb-[0.06em]">Julio</span>
+                  <span className="text-mute/75 pb-[0.06em] italic">Jorge</span>
                 </motion.h1>
               </div>
               <motion.div
@@ -219,31 +259,23 @@ export default function Intro() {
               </div>
             </div>
 
-            <div className="flex items-end justify-between gap-6">
-              <motion.p
-                className="font-serif text-5xl tracking-tight tabular-nums md:text-7xl"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+            <motion.button
+              type="button"
+              onClick={close}
+              className="text-mute hover:text-paper flex items-center gap-2 text-[11px] tracking-[0.22em] uppercase"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.55 }}
+            >
+              <motion.span
+                animate={{ y: [0, 5, 0] }}
+                transition={{ duration: 1.3, repeat: Infinity, ease: 'easeInOut' }}
               >
-                {String(count).padStart(3, '0')}
-              </motion.p>
-              <motion.p
-                className="text-mute max-w-[10rem] text-right text-[11px] leading-relaxed tracking-[0.18em] uppercase"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-              >
-                Recife · PE
-              </motion.p>
-            </div>
+                <ArrowDown className="text-acid size-3.5" />
+              </motion.span>
+              {t.intro.scroll}
+            </motion.button>
           </div>
-
-          <motion.div
-            className="bg-acid absolute right-0 bottom-0 left-0 h-[3px] origin-left"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: HOLD_MS / 1000, ease: 'linear' }}
-          />
         </motion.div>
       ) : null}
     </AnimatePresence>
