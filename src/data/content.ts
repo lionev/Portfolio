@@ -203,13 +203,13 @@ export const featured = [
         body: [
           'Pokedeck is a portable Electron shell for browser games that need many logins at once. You add a game URL, open accounts, and each one gets an isolated persist partition.',
           'Layouts cover focus, grid and spotlight. Per-account zoom packs more sessions on screen. Closing to the tray leaves the accounts alive.',
-          'Built for Windows x64 as a portable .exe. Product page and download live at juliojorge.dev/pokedeck.',
+          'Built for Windows x64 as a portable Electron shell. Product showcase live at juliojorge.dev/pokedeck.',
         ],
         highlights: [
           'Isolated Chromium session per account',
           'Focus, grid and spotlight layouts',
           'Per-account zoom + tray without killing sessions',
-          'Live download page at /pokedeck',
+          'Product showcase at /pokedeck',
         ],
       } satisfies ProjectText,
       pt: {
@@ -219,13 +219,13 @@ export const featured = [
         body: [
           'O Pokedeck é um shell Electron portátil para jogos de navegador que pedem vários logins ao mesmo tempo. Você cola o endereço, abre contas, e cada uma ganha uma partição persist isolada.',
           'Os layouts cobrem foco, grade e destaque. O zoom por conta empilha mais sessões na tela. Fechar para o tray deixa as contas vivas.',
-          'Feito para Windows x64 como .exe portátil. Página e download em juliojorge.dev/pokedeck.',
+          'Feito para Windows x64 como shell Electron portátil. Apresentação em juliojorge.dev/pokedeck.',
         ],
         highlights: [
           'Sessão Chromium isolada por conta',
           'Layouts de foco, grade e destaque',
           'Zoom por conta + tray sem matar as sessões',
-          'Página de download ao vivo em /pokedeck',
+          'Apresentação do produto em /pokedeck',
         ],
       } satisfies ProjectText,
     },
@@ -247,13 +247,13 @@ export const featured = [
         body: [
           'XoC is a friends call that does not rent a media server. The first person in the voice channel becomes the host; everyone else connects to that machine with WebRTC.',
           'On the same LAN the PCs find each other. Away from home, a short signal sets the meetup. Noise suppression runs in a worklet, and screen share can carry system audio.',
-          'Distributed as a portable Electron build for Windows, with auto-update from Firebase Hosting. Product page and download live at juliojorge.dev/xoc.',
+          'Distributed as a portable Electron build for Windows, with auto-update from Firebase Hosting. Product showcase live at juliojorge.dev/xoc.',
         ],
         highlights: [
           'Host is whoever enters the voice channel first',
           'Voice, camera, screen + system audio',
-          'Portable Windows .exe with auto-update',
-          'Live download page at /xoc',
+          'Portable Windows Electron app',
+          'Product showcase at /xoc',
         ],
       } satisfies ProjectText,
       pt: {
@@ -263,13 +263,13 @@ export const featured = [
         body: [
           'O XoC é uma call entre amigos que não aluga servidor de mídia. O primeiro a entrar no canal de voz vira o anfitrião; os outros conectam nessa máquina via WebRTC.',
           'Na mesma rede os PCs se acham. Longe de casa, um sinal curto combina o encontro. O ruído cai num worklet, e o compartilhamento de tela pode levar o áudio do sistema.',
-          'Distribuído como build Electron portátil para Windows, com atualização automática via Firebase Hosting. Página e download em juliojorge.dev/xoc.',
+          'Distribuído como build Electron portátil para Windows, com atualização automática via Firebase Hosting. Apresentação em juliojorge.dev/xoc.',
         ],
         highlights: [
           'O host é quem entra primeiro no canal de voz',
           'Voz, câmera, tela + áudio do sistema',
-          '.exe portátil para Windows com auto-update',
-          'Página de download ao vivo em /xoc',
+          'App Electron portátil para Windows',
+          'Apresentação do produto em /xoc',
         ],
       } satisfies ProjectText,
     },

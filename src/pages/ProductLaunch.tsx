@@ -1,126 +1,14 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link, Navigate, useLocation } from 'react-router-dom'
 import { motion } from 'motion/react'
-import { ArrowDownToLine, ArrowLeft } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { products, type ProductId } from '../data/products'
 import { useLang } from '../i18n/LanguageContext'
 import LangSwitch from '../components/LangSwitch'
+import Constellation from '../components/Constellation'
 import './ProductLaunch.css'
 
 const IDS = new Set<ProductId>(['xoc', 'pokedeck'])
-
-function Field({ accent }: { accent: string }) {
-  const ref = useRef<HTMLCanvasElement>(null)
-
-  useEffect(() => {
-    const canvas = ref.current
-    if (!canvas) return undefined
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return undefined
-
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const count = window.innerWidth < 720 ? 22 : 42
-    const nodes = Array.from({ length: count }, () => ({
-      x: Math.random(),
-      y: Math.random() * 0.72,
-      vx: (Math.random() - 0.5) * 0.00028,
-      vy: (Math.random() - 0.5) * 0.00028,
-      r: Math.random() * 1.3 + 0.5,
-    }))
-    const pointer = { x: 0.72, y: 0.28 }
-    let frame = 0
-
-    const draw = () => {
-      const w = window.innerWidth
-      const h = window.innerHeight
-      ctx.clearRect(0, 0, w, h)
-      const reach = w < 720 ? 110 : 148
-      for (let i = 0; i < nodes.length; i += 1) {
-        for (let j = i + 1; j < nodes.length; j += 1) {
-          const a = nodes[i]
-          const b = nodes[j]
-          const dx = (a.x - b.x) * w
-          const dy = (a.y - b.y) * h
-          const dist = Math.hypot(dx, dy)
-          if (dist < reach) {
-            ctx.strokeStyle = accent.replace(')', `, ${(1 - dist / reach) * 0.38})`).replace(
-              'rgb',
-              'rgba',
-            )
-            if (accent.startsWith('#')) {
-              const alpha = ((1 - dist / reach) * 0.38).toFixed(3)
-              ctx.strokeStyle = hexAlpha(accent, Number(alpha))
-            }
-            ctx.lineWidth = 1
-            ctx.beginPath()
-            ctx.moveTo(a.x * w, a.y * h)
-            ctx.lineTo(b.x * w, b.y * h)
-            ctx.stroke()
-          }
-        }
-      }
-      nodes.forEach((node, index) => {
-        ctx.fillStyle = index === 0 ? accent : 'rgba(239, 234, 224, 0.75)'
-        ctx.beginPath()
-        ctx.arc(node.x * w, node.y * h, index === 0 ? 2.4 : node.r, 0, Math.PI * 2)
-        ctx.fill()
-      })
-    }
-
-    const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2)
-      canvas.width = Math.floor(window.innerWidth * dpr)
-      canvas.height = Math.floor(window.innerHeight * dpr)
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-      draw()
-    }
-
-    const onMove = (event: MouseEvent) => {
-      pointer.x = event.clientX / window.innerWidth
-      pointer.y = event.clientY / window.innerHeight
-    }
-
-    const tick = () => {
-      nodes.forEach((node, index) => {
-        if (!reduce) {
-          node.x += node.vx
-          node.y += node.vy
-          if (node.x < 0 || node.x > 1) node.vx *= -1
-          if (node.y < 0 || node.y > 0.72) node.vy *= -1
-        }
-        if (index === 0) {
-          node.x += (pointer.x - node.x) * 0.03
-          node.y += (pointer.y * 0.55 - node.y) * 0.03
-        }
-      })
-      draw()
-      frame = window.requestAnimationFrame(tick)
-    }
-
-    resize()
-    window.addEventListener('resize', resize)
-    window.addEventListener('pointermove', onMove)
-    frame = window.requestAnimationFrame(tick)
-
-    return () => {
-      window.cancelAnimationFrame(frame)
-      window.removeEventListener('resize', resize)
-      window.removeEventListener('pointermove', onMove)
-    }
-  }, [accent])
-
-  return <canvas ref={ref} className="launch-field" aria-hidden="true" />
-}
-
-function hexAlpha(hex: string, alpha: number) {
-  const raw = hex.replace('#', '')
-  const full = raw.length === 3 ? raw.split('').map((c) => c + c).join('') : raw
-  const n = Number.parseInt(full, 16)
-  const r = (n >> 16) & 255
-  const g = (n >> 8) & 255
-  const b = n & 255
-  return `rgba(${r}, ${g}, ${b}, ${alpha})`
-}
 
 function PreviewPanel({
   productId,
@@ -215,7 +103,7 @@ export default function ProductLaunch() {
             ['produto', lang === 'pt' ? 'Produto' : 'Product'],
             ['caminho', lang === 'pt' ? 'Caminho' : 'Path'],
             ['recursos', lang === 'pt' ? 'Recursos' : 'Features'],
-            ['baixar', lang === 'pt' ? 'Baixar' : 'Download'],
+            ['projeto', lang === 'pt' ? 'Projeto' : 'Project'],
           ]
         : [],
     [lang, text],
@@ -251,7 +139,7 @@ export default function ProductLaunch() {
 
   return (
     <div className="launch" style={style}>
-      <Field accent={product.accent} />
+      <Constellation accent={product.accent} className="launch-field" />
       <div className="launch-shell">
         <header className="launch-nav">
           <Link className="launch-brand" to={product.route}>
@@ -302,20 +190,16 @@ export default function ProductLaunch() {
             </h1>
             <p className="launch-lede">{text.lede}</p>
             <div className="launch-actions">
-              <a className="launch-btn primary" href={product.downloadUrl} download={product.downloadName}>
-                <ArrowDownToLine className="size-4" />
-                {text.download}
-              </a>
-              <a className="launch-btn ghost" href="#caminho">
+              <a className="launch-btn primary" href="#caminho">
                 {text.secondary}
+              </a>
+              <a className="launch-btn ghost" href="#projeto">
+                {lang === 'pt' ? 'Ver o projeto' : 'See the project'}
               </a>
             </div>
             <div className="launch-meta">
               <span>
                 <b>{text.windows}</b>
-              </span>
-              <span>
-                <b>{text.size}</b>
               </span>
               <span>{text.live}</span>
             </div>
@@ -370,15 +254,14 @@ export default function ProductLaunch() {
           </div>
         </section>
 
-        <section className="launch-close launch-wrap" id="baixar">
-          <p className="launch-kicker">{lang === 'pt' ? 'Download' : 'Download'}</p>
+        <section className="launch-close launch-wrap" id="projeto">
+          <p className="launch-kicker">{lang === 'pt' ? 'Projeto' : 'Project'}</p>
           <h2>{text.closeTitle}</h2>
           <p>{text.closeBody}</p>
           <div className="launch-actions">
-            <a className="launch-btn primary" href={product.downloadUrl} download={product.downloadName}>
-              <ArrowDownToLine className="size-4" />
-              {text.download}
-            </a>
+            <Link className="launch-btn primary" to="/#work">
+              {lang === 'pt' ? 'Voltar aos projetos' : 'Back to work'}
+            </Link>
           </div>
           <div className="launch-meta" style={{ justifyContent: 'center' }}>
             {product.stack.map((tag) => (

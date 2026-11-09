@@ -5,6 +5,7 @@ import ProjectPage from './pages/ProjectPage'
 import ProductLaunch from './pages/ProductLaunch'
 import Grain from './components/Grain'
 import Spotlight from './components/Spotlight'
+import Constellation from './components/Constellation'
 import Intro from './components/Intro'
 import { LanguageProvider } from './i18n/LanguageContext'
 
@@ -20,6 +21,7 @@ export default function App() {
 
   return (
     <LanguageProvider>
+      {!isProduct && <Constellation />}
       {!isProduct && <Spotlight />}
       {!isProduct && <Grain />}
       {!isProduct && <Intro />}
