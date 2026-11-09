@@ -53,7 +53,7 @@ export const copy = {
     work: {
       kicker: 'Selected work',
       title: 'What I ship',
-      aside: 'Six real products — marketplace, this site, overlay, bot, macro, and a published fork.',
+      aside: 'Seven real products — Pokedeck, XoC, marketplace, overlay, bot, macro, and a published fork.',
     },
     more: 'Also shipped',
     experience: {
@@ -132,7 +132,7 @@ export const copy = {
     work: {
       kicker: 'Projetos',
       title: 'O que eu entrego',
-      aside: 'Seis produtos reais — marketplace, este site, overlay, bot, macro e um fork publicado.',
+      aside: 'Sete produtos reais — Pokedeck, XoC, marketplace, overlay, bot, macro e um fork publicado.',
     },
     more: 'Também publiquei',
     experience: {
@@ -187,8 +187,96 @@ type ProjectText = {
 
 export const featured = [
   {
-    slug: 'navo',
+    slug: 'pokedeck',
     number: '01',
+    name: 'Pokedeck',
+    year: '2026',
+    stack: ['Electron', 'Chromium', 'Multi-session', 'Windows'],
+    live: '/pokedeck',
+    repo: null as string | null,
+    accent: '#3ec8de',
+    text: {
+      en: {
+        kicker: 'Browser games · Multi-account',
+        summary:
+          'Several browser-game accounts in one window. Each account keeps its own Chromium session and keeps running while you focus on another.',
+        body: [
+          'Pokedeck is a portable Electron shell for browser games that need many logins at once. You add a game URL, open accounts, and each one gets an isolated persist partition.',
+          'Layouts cover focus, grid and spotlight. Per-account zoom packs more sessions on screen. Closing to the tray leaves the accounts alive.',
+          'Built for Windows x64 as a portable .exe. Product page and download live at juliojorge.dev/pokedeck.',
+        ],
+        highlights: [
+          'Isolated Chromium session per account',
+          'Focus, grid and spotlight layouts',
+          'Per-account zoom + tray without killing sessions',
+          'Live download page at /pokedeck',
+        ],
+      } satisfies ProjectText,
+      pt: {
+        kicker: 'Browser games · Multi-conta',
+        summary:
+          'Várias contas de jogos de navegador numa só janela. Cada conta tem a própria sessão Chromium e segue rodando enquanto você foca em outra.',
+        body: [
+          'O Pokedeck é um shell Electron portátil para jogos de navegador que pedem vários logins ao mesmo tempo. Você cola o endereço, abre contas, e cada uma ganha uma partição persist isolada.',
+          'Os layouts cobrem foco, grade e destaque. O zoom por conta empilha mais sessões na tela. Fechar para o tray deixa as contas vivas.',
+          'Feito para Windows x64 como .exe portátil. Página e download em juliojorge.dev/pokedeck.',
+        ],
+        highlights: [
+          'Sessão Chromium isolada por conta',
+          'Layouts de foco, grade e destaque',
+          'Zoom por conta + tray sem matar as sessões',
+          'Página de download ao vivo em /pokedeck',
+        ],
+      } satisfies ProjectText,
+    },
+  },
+  {
+    slug: 'xoc',
+    number: '02',
+    name: 'XoC',
+    year: '2026',
+    stack: ['Electron', 'React', 'WebRTC', 'WebSocket', 'Windows'],
+    live: '/xoc',
+    repo: null as string | null,
+    accent: '#a78bfa',
+    text: {
+      en: {
+        kicker: 'Voice · Camera · Screen',
+        summary:
+          'A portable Windows call app for friends. Whoever joins first hosts the room on their own PC — voice, camera and screen route peer-to-peer.',
+        body: [
+          'XoC is a friends call that does not rent a media server. The first person in the voice channel becomes the host; everyone else connects to that machine with WebRTC.',
+          'On the same LAN the PCs find each other. Away from home, a short signal sets the meetup. Noise suppression runs in a worklet, and screen share can carry system audio.',
+          'Distributed as a portable Electron build for Windows, with auto-update from Firebase Hosting. Product page and download live at juliojorge.dev/xoc.',
+        ],
+        highlights: [
+          'Host is whoever enters the voice channel first',
+          'Voice, camera, screen + system audio',
+          'Portable Windows .exe with auto-update',
+          'Live download page at /xoc',
+        ],
+      } satisfies ProjectText,
+      pt: {
+        kicker: 'Voz · Câmera · Tela',
+        summary:
+          'App portátil de call entre amigos no Windows. Quem entra primeiro no canal segura a sala no próprio PC — voz, câmera e tela em peer-to-peer.',
+        body: [
+          'O XoC é uma call entre amigos que não aluga servidor de mídia. O primeiro a entrar no canal de voz vira o anfitrião; os outros conectam nessa máquina via WebRTC.',
+          'Na mesma rede os PCs se acham. Longe de casa, um sinal curto combina o encontro. O ruído cai num worklet, e o compartilhamento de tela pode levar o áudio do sistema.',
+          'Distribuído como build Electron portátil para Windows, com atualização automática via Firebase Hosting. Página e download em juliojorge.dev/xoc.',
+        ],
+        highlights: [
+          'O host é quem entra primeiro no canal de voz',
+          'Voz, câmera, tela + áudio do sistema',
+          '.exe portátil para Windows com auto-update',
+          'Página de download ao vivo em /xoc',
+        ],
+      } satisfies ProjectText,
+    },
+  },
+  {
+    slug: 'navo',
+    number: '03',
     name: 'NAVO',
     year: '2026',
     stack: ['Next.js 16', 'React 19', 'TypeScript', 'Prisma', 'PostgreSQL', 'Mercado Pago', 'Zustand'],
@@ -248,52 +336,8 @@ export const featured = [
     },
   },
   {
-    slug: 'portfolio',
-    number: '02',
-    name: 'Portfolio',
-    year: '2026',
-    stack: ['React 19', 'TypeScript', 'Vite', 'Tailwind', 'Motion', 'Vercel'],
-    live: 'https://juliojorge.dev',
-    repo: 'https://github.com/lionev/Portfolio',
-    accent: '#efeae0',
-    text: {
-      en: {
-        kicker: 'Personal site · juliojorge.dev',
-        summary:
-          'This site: a bilingual portfolio in React, with selected work, experience and a CV download in Portuguese or English.',
-        body: [
-          'I built and shipped this portfolio as a live product at juliojorge.dev. It is not a template: the copy, the project pages and the language switch are written for how I actually work.',
-          'The visitor can read the site in Portuguese or English, open each product in its own page, and download the final PDF résumé after choosing a language — independent of the page language.',
-          'Stack: React 19, TypeScript, Vite, Tailwind CSS and Motion. Live at juliojorge.dev.',
-        ],
-        highlights: [
-          'Live at juliojorge.dev',
-          'Portuguese and English, with a CV picker that does not follow the site language',
-          'Project pages for NAVO, XoHub, XoMacro and the rest of the work',
-          'React 19, Vite, Tailwind and Motion',
-        ],
-      } satisfies ProjectText,
-      pt: {
-        kicker: 'Site pessoal · juliojorge.dev',
-        summary:
-          'Este site: um portfólio bilíngue em React, com projetos, experiência e download do currículo em português ou inglês.',
-        body: [
-          'Eu construí e publiquei este portfólio como produto no ar em juliojorge.dev. Não é um template: o texto, as páginas de projeto e a troca de idioma foram escritos para o jeito que eu trabalho.',
-          'O visitante lê o site em português ou inglês, abre cada produto na própria página e baixa o PDF final do currículo depois de escolher o idioma — independente do idioma da página.',
-          'Stack: React 19, TypeScript, Vite, Tailwind CSS e Motion. No ar em juliojorge.dev.',
-        ],
-        highlights: [
-          'No ar em juliojorge.dev',
-          'Português e inglês, com seletor de CV que não segue o idioma do site',
-          'Páginas de projeto para NAVO, XoHub, XoMacro e o restante do trabalho',
-          'React 19, Vite, Tailwind e Motion',
-        ],
-      } satisfies ProjectText,
-    },
-  },
-  {
     slug: 'xohub',
-    number: '03',
+    number: '04',
     name: 'XoHub',
     year: '2025–26',
     stack: ['Python', 'PySide6', 'React', 'TypeScript', 'Node', 'Prisma', 'PostgreSQL'],
@@ -337,7 +381,7 @@ export const featured = [
   },
   {
     slug: 'pkmdbot',
-    number: '04',
+    number: '05',
     name: 'PKMDBOT',
     year: '2024–26',
     stack: ['React', 'TypeScript', 'Node', 'Mercado Pago', 'Python', 'OpenCV', 'PyInstaller'],
@@ -381,7 +425,7 @@ export const featured = [
   },
   {
     slug: 'xomacro',
-    number: '05',
+    number: '06',
     name: 'XoMacro',
     year: '2026',
     stack: ['C#', '.NET 8', 'WinForms', 'Hotkeys', 'Input simulation'],
@@ -425,7 +469,7 @@ export const featured = [
   },
   {
     slug: 'poeredux',
-    number: '06',
+    number: '07',
     name: 'PoeRedux',
     year: '2026',
     stack: ['C#', 'WPF', '.NET', 'LibGGPK3', 'JSON patches'],

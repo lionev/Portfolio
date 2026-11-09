@@ -42,17 +42,26 @@ export default function ProjectPage() {
           <h1 className="font-serif mt-3 text-6xl tracking-tight md:text-8xl">{project.name}</h1>
           <p className="mt-6 max-w-2xl text-xl leading-relaxed text-[#d8d3c6]">{text.summary}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            {project.live && (
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-acid inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold"
-              >
-                {t.project.live}
-                <ArrowUpRight className="ml-1.5 size-4" />
-              </a>
-            )}
+            {project.live &&
+              (project.live.startsWith('/') ? (
+                <Link
+                  to={project.live}
+                  className="btn-acid inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold"
+                >
+                  {t.project.live}
+                  <ArrowUpRight className="ml-1.5 size-4" />
+                </Link>
+              ) : (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-acid inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold"
+                >
+                  {t.project.live}
+                  <ArrowUpRight className="ml-1.5 size-4" />
+                </a>
+              ))}
             {project.repo && (
               <a
                 href={project.repo}

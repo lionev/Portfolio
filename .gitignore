@@ -27,3 +27,8 @@ cv-simple/
 *.njsproj
 *.sln
 *.sw?
+
+# Large product binaries — host externally in production
+public/downloads/*.exe
+public/downloads/*.bin
+
