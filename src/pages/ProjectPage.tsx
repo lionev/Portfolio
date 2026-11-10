@@ -5,6 +5,7 @@ import { featured } from '../data/content'
 import { useLang } from '../i18n/LanguageContext'
 import Cover from '../components/Cover'
 import ShotCarousel from '../components/ShotCarousel'
+import ProductDemo, { demoIds, type DemoId } from '../components/ProductDemo'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 
@@ -19,6 +20,7 @@ export default function ProjectPage() {
 
   const text = project.text[lang]
   const gallery = 'gallery' in project ? project.gallery : undefined
+  const hasDemo = demoIds.has(project.slug)
 
   return (
     <div className="relative z-10">
@@ -125,6 +127,29 @@ export default function ProjectPage() {
             </div>
           </motion.div>
         </div>
+
+        {hasDemo && (
+          <motion.section
+            className="mt-20"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.28, duration: 0.6 }}
+          >
+            <p className="text-acid text-[11px] tracking-[0.32em] uppercase">{t.project.howItWorks}</p>
+            <h2 className="font-serif mt-3 text-4xl tracking-tight md:text-5xl">{t.project.howItWorksTitle}</h2>
+            <p className="text-mute mt-3 max-w-2xl text-base leading-relaxed">{t.project.howItWorksBody}</p>
+            <div className="border-line mt-8 overflow-hidden rounded-2xl border">
+              <div className="relative h-[36vh] min-h-56 md:h-[24rem]">
+                <ProductDemo
+                  id={project.slug as DemoId}
+                  accent={project.accent}
+                  tall
+                  label={lang === 'pt' ? 'como funciona' : 'how it works'}
+                />
+              </div>
+            </div>
+          </motion.section>
+        )}
       </article>
       <Footer />
     </div>

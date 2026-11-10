@@ -4,6 +4,7 @@ import { profile } from '../data/content'
 import { useLang } from '../i18n/LanguageContext'
 import LangSwitch from './LangSwitch'
 import CvDownload from './CvDownload'
+import GithubLink from './GithubLink'
 import TrailheadLink from './TrailheadLink'
 
 const sectionIds = ['home', 'work', 'experience', 'stack', 'about', 'contact'] as const
@@ -78,8 +79,9 @@ export default function Nav() {
             )
           })}
           <LangSwitch />
-          <CvDownload variant="nav" />
           <TrailheadLink variant="nav" />
+          <GithubLink variant="nav" />
+          <CvDownload variant="nav" />
         </nav>
       </div>
     </header>

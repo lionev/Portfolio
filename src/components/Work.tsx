@@ -20,17 +20,17 @@ export default function Work() {
           </div>
         </Reveal>
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid items-stretch gap-5 md:grid-cols-2">
           {featured.map((project, index) => {
             const text = project.text[lang]
             return (
-              <Reveal key={project.slug} delay={index * 0.08}>
+              <Reveal key={project.slug} delay={index * 0.08} className="h-full">
                 <Link
                   to={`/work/${project.slug}`}
-                  className="group border-line/80 hover:border-paper/25 bg-ink-2/60 block overflow-hidden rounded-2xl border"
+                  className="group border-line/80 hover:border-paper/25 bg-ink-2/60 flex h-full flex-col overflow-hidden rounded-2xl border"
                 >
                   <Cover slug={project.slug} accent={project.accent} />
-                  <div className="p-6 md:p-7">
+                  <div className="flex flex-1 flex-col p-6 md:p-7">
                     <div className="text-mute mb-3 flex items-center justify-between text-[11px] tracking-[0.22em] uppercase">
                       <span>{project.number}</span>
                       <span>{project.year}</span>
@@ -39,8 +39,10 @@ export default function Work() {
                       {project.name}
                     </h3>
                     <p className="text-mute mt-1 text-xs tracking-[0.16em] uppercase">{text.kicker}</p>
-                    <p className="mt-4 text-[15px] leading-relaxed text-[#d8d3c6]">{text.summary}</p>
-                    <div className="mt-5 flex flex-wrap gap-1.5">
+                    <p className="mt-4 line-clamp-3 text-[15px] leading-relaxed text-[#d8d3c6]">
+                      {text.summary}
+                    </p>
+                    <div className="mt-auto flex flex-wrap gap-1.5 pt-5">
                       {project.stack.slice(0, 4).map((tag) => (
                         <span
                           key={tag}

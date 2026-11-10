@@ -39,6 +39,9 @@ export const copy = {
       trailhead: 'Trailhead',
       trailheadShort: 'Trailhead',
       trailheadTitle: 'Salesforce Trailhead profile',
+      github: 'GitHub',
+      githubShort: 'GitHub',
+      githubTitle: 'GitHub profile',
     },
     hero: {
       open: 'Open to work',
@@ -94,6 +97,10 @@ export const copy = {
       stack: 'Stack',
       prevShot: 'Previous screenshot',
       nextShot: 'Next screenshot',
+      howItWorks: 'How it works',
+      howItWorksTitle: 'The interface in motion',
+      howItWorksBody:
+        'A short loop of the product flow — not a screenshot, a reading of how the system behaves when someone uses it.',
     },
     footer: 'Built with React · Tailwind · Motion',
   },
@@ -118,6 +125,9 @@ export const copy = {
       trailhead: 'Trailhead',
       trailheadShort: 'Trailhead',
       trailheadTitle: 'Perfil Salesforce no Trailhead',
+      github: 'GitHub',
+      githubShort: 'GitHub',
+      githubTitle: 'Perfil no GitHub',
     },
     hero: {
       open: 'Aberto a oportunidades',
@@ -173,6 +183,10 @@ export const copy = {
       stack: 'Stack',
       prevShot: 'Print anterior',
       nextShot: 'Próximo print',
+      howItWorks: 'Como funciona',
+      howItWorksTitle: 'A interface em movimento',
+      howItWorksBody:
+        'Um loop curto do fluxo do produto — não é o print, é a leitura de como o sistema se comporta quando alguém usa.',
     },
     footer: 'Feito com React · Tailwind · Motion',
   },
@@ -195,6 +209,13 @@ export const featured = [
     live: '/pokedeck',
     repo: null as string | null,
     accent: '#3ec8de',
+    gallery: [
+      {
+        src: '/shots/pokedeck.png',
+        en: 'Grid — several accounts alive in one window',
+        pt: 'Grade — várias contas vivas numa só janela',
+      },
+    ],
     text: {
       en: {
         kicker: 'Browser games · Multi-account',
@@ -239,6 +260,13 @@ export const featured = [
     live: '/xoc',
     repo: null as string | null,
     accent: '#a78bfa',
+    gallery: [
+      {
+        src: '/shots/xoc.png',
+        en: 'Servers, text and voice channels — friends call UI',
+        pt: 'Servidores, canais de texto e voz — UI da call',
+      },
+    ],
     text: {
       en: {
         kicker: 'Voice · Camera · Screen',
@@ -344,6 +372,13 @@ export const featured = [
     live: null as string | null,
     repo: null as string | null,
     accent: '#d4ff3f',
+    gallery: [
+      {
+        src: '/shots/xohub.png',
+        en: 'XoHuB web — module hub for Path of Exile',
+        pt: 'XoHuB web — hub de módulos para Path of Exile',
+      },
+    ],
     text: {
       en: {
         kicker: 'Path of Exile · Desktop + Web',
@@ -432,6 +467,13 @@ export const featured = [
     live: null as string | null,
     repo: null as string | null,
     accent: '#fbbf24',
+    gallery: [
+      {
+        src: '/shots/xomacro.png',
+        en: 'Macro library, steps and playback controls',
+        pt: 'Biblioteca de macros, passos e controles de reprodução',
+      },
+    ],
     text: {
       en: {
         kicker: 'Windows · C# / WinForms',

@@ -1,24 +1,33 @@
+import ProductDemo, { demoIds, type DemoId } from './ProductDemo'
+
 type Props = {
   slug: string
   accent: string
   tall?: boolean
 }
 
-const shots: Record<string, { src: string; alt: string; fit: string }> = {
+const shots: Record<string, { src: string; alt: string; position?: string }> = {
   navo: {
     src: '/shots/navo.png',
     alt: 'NAVO — marketplace de agenda com sinal no PIX',
-    fit: 'object-cover object-top',
   },
   xohub: {
     src: '/shots/xohub.png',
     alt: 'XoHub — hub de módulos para Path of Exile',
-    fit: 'object-cover object-[center_18%]',
   },
   xomacro: {
     src: '/shots/xomacro.png',
-    alt: 'XoMacro v62 — gravador de teclado e mouse',
-    fit: 'object-cover object-[center_12%]',
+    alt: 'XoMacro — gravador de teclado e mouse',
+  },
+  xoc: {
+    src: '/shots/xoc.png',
+    alt: 'XoC — call peer-to-peer entre amigos',
+    position: 'object-left top',
+  },
+  pokedeck: {
+    src: '/shots/pokedeck.png',
+    alt: 'Pokedeck — várias contas numa janela',
+    position: 'object-left top',
   },
 }
 
@@ -32,11 +41,23 @@ export default function Cover({ slug, accent, tall }: Props) {
         <img
           src={shot.src}
           alt={shot.alt}
-          className={`h-full w-full ${shot.fit}`}
+          className={`h-full w-full object-cover ${shot.position ?? 'object-top'}`}
           loading="lazy"
           decoding="async"
         />
-        <div className="from-ink-2/90 absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t to-transparent" />
+        <div className="from-ink-2/90 absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t to-transparent" />
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{ boxShadow: `inset 0 0 0 1px ${accent}22` }}
+        />
+      </div>
+    )
+  }
+
+  if (demoIds.has(slug)) {
+    return (
+      <div className={`relative overflow-hidden ${height}`}>
+        <ProductDemo id={slug as DemoId} accent={accent} tall={tall} />
         <div
           className="pointer-events-none absolute inset-0"
           style={{ boxShadow: `inset 0 0 0 1px ${accent}22` }}
@@ -51,8 +72,6 @@ export default function Cover({ slug, accent, tall }: Props) {
       style={{ background: `radial-gradient(120% 90% at 80% 10%, ${accent}22, transparent 50%), #0c0e14` }}
     >
       {slug === 'portfolio' && <SiteArt accent={accent} />}
-      {slug === 'xoc' && <XocArt accent={accent} />}
-      {slug === 'pokedeck' && <PokedeckArt accent={accent} />}
       {slug === 'pkmdbot' && <BotArt accent={accent} />}
       {slug === 'poeredux' && <PatchArt accent={accent} />}
       <div className="from-ink-2 absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t to-transparent" />
@@ -70,53 +89,6 @@ function SiteArt({ accent }: { accent: string }) {
       <p className="mt-4 text-[11px] tracking-[0.22em] uppercase" style={{ color: accent }}>
         juliojorge.dev
       </p>
-    </div>
-  )
-}
-
-function XocArt({ accent }: { accent: string }) {
-  return (
-    <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-8">
-      <div className="flex items-center gap-3">
-        <img src="/products/xoc-mark.png" alt="" className="size-10 rounded-xl" />
-        <p className="text-[11px] tracking-[0.28em] uppercase" style={{ color: accent }}>
-          Voice · Camera · Screen
-        </p>
-      </div>
-      <div>
-        <p className="font-serif text-5xl leading-none tracking-tight md:text-6xl">
-          First PC
-          <span className="text-mute/70 block italic">hosts the call</span>
-        </p>
-      </div>
-    </div>
-  )
-}
-
-function PokedeckArt({ accent }: { accent: string }) {
-  return (
-    <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-8">
-      <div className="flex items-center gap-3">
-        <img src="/products/pokedeck-mark.png" alt="" className="size-10 rounded-xl" />
-        <p className="text-[11px] tracking-[0.28em] uppercase" style={{ color: accent }}>
-          Multi-account shell
-        </p>
-      </div>
-      <div className="grid grid-cols-2 gap-2">
-        {['Main', 'Farm A', 'Farm B', 'Alt'].map((label, index) => (
-          <div
-            key={label}
-            className="rounded-xl border px-3 py-3 text-[11px] tracking-wide uppercase"
-            style={{
-              borderColor: index === 0 ? `${accent}66` : `${accent}22`,
-              background: index === 0 ? `${accent}18` : 'transparent',
-              color: index === 0 ? accent : '#9a9588',
-            }}
-          >
-            {label}
-          </div>
-        ))}
-      </div>
     </div>
   )
 }

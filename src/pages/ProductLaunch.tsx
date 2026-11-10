@@ -6,86 +6,10 @@ import { products, type ProductId } from '../data/products'
 import { useLang } from '../i18n/LanguageContext'
 import LangSwitch from '../components/LangSwitch'
 import Constellation from '../components/Constellation'
+import ProductDemo from '../components/ProductDemo'
 import './ProductLaunch.css'
 
 const IDS = new Set<ProductId>(['xoc', 'pokedeck'])
-
-function PreviewPanel({
-  productId,
-  accent,
-  label,
-}: {
-  productId: ProductId
-  accent: string
-  label: string
-}) {
-  if (productId === 'xoc') {
-    const cast = [
-      { name: 'Você', tag: '2048', host: true },
-      { name: 'Luna', tag: '4812', host: false },
-      { name: 'Nico', tag: '1190', host: false },
-      { name: 'Iara', tag: '7731', host: false },
-    ]
-    return (
-      <div className="launch-panel">
-        <div className="launch-panel-top">
-          <strong>Sala ao vivo</strong>
-          <span className="launch-pulse">
-            <i />
-            {label}
-          </span>
-        </div>
-        <div className="launch-nodes">
-          {cast.map((person) => (
-            <div key={person.tag} className={`launch-node${person.host ? ' is-host' : ''}`}>
-              <div className="launch-avatar" style={{ background: person.host ? accent : '#d8d3c6' }}>
-                {person.name.slice(0, 1)}
-              </div>
-              <div>
-                <strong>{person.name}</strong>
-                <small>{person.host ? 'anfitrião · roteando' : 'conectado'}</small>
-              </div>
-              <span className="launch-tag">#{person.tag}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    )
-  }
-
-  const accounts = [
-    { name: 'Main', status: 'em foco', host: true },
-    { name: 'Farm A', status: 'rodando', host: false },
-    { name: 'Farm B', status: 'rodando', host: false },
-    { name: 'Alt', status: 'em espera', host: false },
-  ]
-
-  return (
-    <div className="launch-panel">
-      <div className="launch-panel-top">
-        <strong>Grade viva</strong>
-        <span className="launch-pulse">
-          <i />
-          {label}
-        </span>
-      </div>
-      <div className="launch-nodes">
-        {accounts.map((account) => (
-          <div key={account.name} className={`launch-node${account.host ? ' is-host' : ''}`}>
-            <div className="launch-avatar" style={{ background: account.host ? accent : '#d8d3c6' }}>
-              {account.name.slice(0, 1)}
-            </div>
-            <div>
-              <strong>{account.name}</strong>
-              <small>{account.status}</small>
-            </div>
-            <span className="launch-tag">session</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
 
 export default function ProductLaunch() {
   const { pathname } = useLocation()
@@ -101,7 +25,7 @@ export default function ProductLaunch() {
       text
         ? [
             ['produto', lang === 'pt' ? 'Produto' : 'Product'],
-            ['caminho', lang === 'pt' ? 'Caminho' : 'Path'],
+            ['caminho', lang === 'pt' ? 'Como funciona' : 'How it works'],
             ['recursos', lang === 'pt' ? 'Recursos' : 'Features'],
             ['projeto', lang === 'pt' ? 'Projeto' : 'Project'],
           ]
@@ -142,6 +66,14 @@ export default function ProductLaunch() {
       <Constellation accent={product.accent} className="launch-field" />
       <div className="launch-shell">
         <header className="launch-nav">
+          <Link
+            to="/#work"
+            className="launch-home"
+            aria-label={lang === 'pt' ? 'Voltar ao portfólio' : 'Back to portfolio'}
+            title={lang === 'pt' ? 'Voltar ao portfólio' : 'Back to portfolio'}
+          >
+            <ArrowLeft className="size-4" />
+          </Link>
           <Link className="launch-brand" to={product.route}>
             <img src={product.mark} alt="" />
             {product.name}
@@ -166,14 +98,12 @@ export default function ProductLaunch() {
 
         <section className="launch-hero launch-wrap" id="produto">
           <motion.div
+            className="launch-hero-copy"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Link
-              to="/#work"
-              className="mb-8 inline-flex items-center gap-2 text-[12px] tracking-[0.2em] text-[#9a9588] uppercase hover:text-[#efeae0]"
-            >
+            <Link to="/#work" className="launch-back">
               <ArrowLeft className="size-4" />
               {text.back}
             </Link>
@@ -210,11 +140,9 @@ export default function ProductLaunch() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.12, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <PreviewPanel
-              productId={product.id}
-              accent={product.accent}
-              label={lang === 'pt' ? 'simulação' : 'simulation'}
-            />
+            <div className="launch-shot">
+              <img src={product.shot} alt={`${product.name} — interface`} />
+            </div>
           </motion.div>
         </section>
 
@@ -227,8 +155,16 @@ export default function ProductLaunch() {
         </div>
 
         <section className="launch-block launch-wrap" id="caminho">
-          <p className="launch-kicker">{lang === 'pt' ? 'O caminho' : 'The path'}</p>
+          <p className="launch-kicker">{lang === 'pt' ? 'Como funciona' : 'How it works'}</p>
           <h2>{text.stepsTitle}</h2>
+          <div className="launch-demo launch-demo-inline">
+            <ProductDemo
+              id={product.id}
+              accent={product.accent}
+              tall
+              label={lang === 'pt' ? 'como funciona' : 'how it works'}
+            />
+          </div>
           <div className="launch-steps">
             {text.steps.map((step) => (
               <article className="launch-step" key={step.n}>

@@ -4,6 +4,7 @@ import { profile } from '../data/content'
 import { useLang } from '../i18n/LanguageContext'
 import Magnetic from './Magnetic'
 import CvDownload from './CvDownload'
+import GithubLink from './GithubLink'
 import TrailheadLink from './TrailheadLink'
 
 export default function Hero() {
@@ -56,8 +57,9 @@ export default function Hero() {
                 {t.hero.selected}
                 <ArrowDownRight className="ml-1.5 size-4" />
               </Magnetic>
-              <CvDownload variant="hero" />
               <TrailheadLink variant="hero" />
+              <GithubLink variant="hero" />
+              <CvDownload variant="hero" />
             </div>
           </motion.div>
         </div>

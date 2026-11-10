@@ -30,7 +30,7 @@ export default function ShotCarousel({ shots, accent }: Props) {
           key={current.src}
           src={current.src}
           alt={caption}
-          className="h-[42vh] min-h-64 w-full object-cover object-top md:h-[28rem]"
+          className="h-[42vh] min-h-64 w-full bg-[#0c0e14] object-contain object-center md:h-[28rem]"
         />
         <div
           className="pointer-events-none absolute inset-0"

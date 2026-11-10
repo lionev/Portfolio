@@ -25,6 +25,7 @@ export type Product = {
   version: string
   route: string
   mark: string
+  shot: string
   downloadUrl: string
   downloadName: string
   accent: string
@@ -42,6 +43,7 @@ export const products: Record<ProductId, Product> = {
     version: '0.1.91',
     route: '/xoc',
     mark: '/products/xoc-mark.png',
+    shot: '/shots/xoc.png',
     downloadUrl: 'https://xoc-bd.web.app/XoC.bin',
     downloadName: 'XoC.exe',
     accent: '#a78bfa',
@@ -183,6 +185,7 @@ export const products: Record<ProductId, Product> = {
     version: '0.1.0',
     route: '/pokedeck',
     mark: '/products/pokedeck-mark.png',
+    shot: '/shots/pokedeck.png',
     downloadUrl: 'https://xoc-bd.web.app/Pokedeck.bin',
     downloadName: 'Pokedeck.exe',
     accent: '#3ec8de',
