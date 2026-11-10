@@ -1,11 +1,35 @@
+import { animate } from 'animejs'
+import { useReducedMotion } from 'motion/react'
 import { Link } from 'react-router-dom'
+import type { MouseEvent } from 'react'
 import { featured } from '../data/content'
 import { useLang } from '../i18n/LanguageContext'
-import Reveal from './Reveal'
 import Cover from './Cover'
+import Reveal from './Reveal'
 
 export default function Work() {
   const { lang, t } = useLang()
+  const reduce = useReducedMotion()
+
+  const onEnter = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (reduce) return
+    animate(event.currentTarget, {
+      y: -14,
+      scale: 1.02,
+      duration: 380,
+      ease: 'out(3)',
+    })
+  }
+
+  const onLeave = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (reduce) return
+    animate(event.currentTarget, {
+      y: 0,
+      scale: 1,
+      duration: 480,
+      ease: 'out(3)',
+    })
+  }
 
   return (
     <section id="work" className="relative px-5 py-24 md:px-8 md:py-32">
@@ -27,7 +51,9 @@ export default function Work() {
               <Reveal key={project.slug} delay={index * 0.08} className="h-full">
                 <Link
                   to={`/work/${project.slug}`}
-                  className="group border-line/80 hover:border-paper/25 bg-ink-2/60 flex h-full flex-col overflow-hidden rounded-2xl border"
+                  onMouseEnter={onEnter}
+                  onMouseLeave={onLeave}
+                  className="group border-line/80 hover:border-paper/25 bg-ink-2/60 flex h-full flex-col overflow-hidden rounded-2xl border will-change-transform"
                 >
                   <Cover slug={project.slug} accent={project.accent} />
                   <div className="flex flex-1 flex-col p-6 md:p-7">

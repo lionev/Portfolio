@@ -1,3 +1,4 @@
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 import { ArrowUpRight } from 'lucide-react'
 import { profile } from '../data/content'
 import { useLang } from '../i18n/LanguageContext'
@@ -6,6 +7,7 @@ import Magnetic from './Magnetic'
 
 export default function Contact() {
   const { t } = useLang()
+  const [buttons] = useAutoAnimate({ duration: 280, easing: 'ease-out' })
 
   return (
     <section id="contact" className="px-5 py-24 md:px-8 md:py-32">
@@ -17,7 +19,7 @@ export default function Contact() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="mt-12 flex flex-wrap gap-3">
+          <div ref={buttons} className="mt-12 flex flex-wrap gap-3">
             <Magnetic
               href={`mailto:${profile.email}`}
               className="btn-acid rounded-full px-6 py-3 text-sm font-semibold"

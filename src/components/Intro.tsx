@@ -1,3 +1,4 @@
+import { animate, stagger } from 'animejs'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { ArrowDown } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
@@ -40,6 +41,41 @@ export default function Intro() {
   const [word, setWord] = useState(0)
   const closing = useRef(false)
   const touchY = useRef<number | null>(null)
+  const techRowRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!open || reduce) return
+    let chipAnim: ReturnType<typeof animate> | null = null
+    let floatAnim: ReturnType<typeof animate> | null = null
+    const timer = window.setTimeout(() => {
+      const chips = techRowRef.current?.querySelectorAll('[data-intro-tech]')
+      const floats = document.querySelectorAll('[data-intro-float]')
+      if (chips?.length) {
+        chipAnim = animate(chips, {
+          opacity: [0, 1],
+          scale: [0.4, 1],
+          y: [24, 0],
+          delay: stagger(55),
+          duration: 720,
+          ease: 'out(3)',
+        })
+      }
+      if (floats.length) {
+        floatAnim = animate(floats, {
+          opacity: [0, 0.45],
+          scale: [0.5, 1],
+          delay: stagger(40),
+          duration: 900,
+          ease: 'out(3)',
+        })
+      }
+    }, 120)
+    return () => {
+      window.clearTimeout(timer)
+      chipAnim?.revert()
+      floatAnim?.revert()
+    }
+  }, [open, reduce])
 
   const close = () => {
     if (closing.current) return
@@ -167,13 +203,12 @@ export default function Intro() {
               return (
                 <motion.div
                   key={`float-${spot}-${tech.title}`}
-                  className={`absolute ${className}`}
-                  initial={{ opacity: 0, scale: 0.6 }}
-                  animate={{ opacity: 0.38, scale: 1, y: [0, -10, 0] }}
+                  data-intro-float
+                  className={`absolute opacity-0 ${className}`}
+                  animate={{ y: [0, -14, 0], rotate: [0, 6, -4, 0] }}
                   transition={{
-                    opacity: { delay: 0.2 + spot * 0.05, duration: 0.6 },
-                    scale: { delay: 0.2 + spot * 0.05, duration: 0.6 },
                     y: { duration: 3.2 + (spot % 4) * 0.3, repeat: Infinity, ease: 'easeInOut' },
+                    rotate: { duration: 5 + (spot % 3), repeat: Infinity, ease: 'easeInOut' },
                   }}
                   style={{ color: techColor(tech.hex) }}
                 >
@@ -238,25 +273,21 @@ export default function Intro() {
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 1.4, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
               />
-              <div className="mt-7 flex max-w-3xl flex-wrap items-center gap-2 md:gap-2.5">
+              <div
+                ref={techRowRef}
+                className="mt-7 flex max-w-3xl flex-wrap items-center gap-2 md:gap-2.5"
+              >
                 {introTechs.map((tech, i) => (
-                  <motion.div
+                  <div
                     key={tech.title}
+                    data-intro-tech
                     title={tech.title}
-                    className="border-line/80 grid size-9 place-items-center rounded-full border bg-ink-2/70 md:size-11"
-                    initial={{ scale: 0, opacity: 0, y: 14 }}
-                    animate={{ scale: 1, opacity: 1, y: 0 }}
-                    transition={{
-                      delay: 0.42 + i * 0.07,
-                      type: 'spring',
-                      stiffness: 280,
-                      damping: 16,
-                    }}
+                    className="border-line/80 grid size-9 place-items-center rounded-full border bg-ink-2/70 opacity-0 md:size-11"
                     style={{ color: techColor(tech.hex) }}
                   >
                     <motion.span
                       className="grid place-items-center"
-                      animate={{ y: [0, -4, 0] }}
+                      animate={{ y: [0, -5, 0], rotate: [0, -8, 8, 0] }}
                       transition={{
                         duration: 2.1 + (i % 5) * 0.2,
                         repeat: Infinity,
@@ -268,7 +299,7 @@ export default function Intro() {
                         <path fill="currentColor" d={tech.path} />
                       </svg>
                     </motion.span>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>

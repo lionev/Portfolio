@@ -17,7 +17,7 @@ export default function TrailheadLink({ variant }: { variant: Variant }) {
       title={t.cv.trailheadTitle}
       className={
         nav
-          ? 'border-line hover:border-paper relative z-50 inline-flex shrink-0 items-center rounded-full border px-3.5 py-1.5 font-semibold tracking-[0.14em]'
+          ? 'border-line hover:border-paper relative z-50 inline-flex h-8 shrink-0 items-center rounded-full border px-3.5 text-[11px] font-semibold tracking-[0.14em]'
           : 'border-line hover:border-paper inline-flex items-center rounded-full border px-5 py-2.5 text-sm'
       }
     >

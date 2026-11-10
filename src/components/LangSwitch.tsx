@@ -13,7 +13,7 @@ export default function LangSwitch() {
     <div
       role="group"
       aria-label={t.langLabel}
-      className="border-line flex shrink-0 rounded-full border p-0.5"
+      className="border-line flex h-8 shrink-0 items-center rounded-full border p-0.5"
     >
       {options.map((option) => {
         const active = lang === option.id
@@ -23,7 +23,7 @@ export default function LangSwitch() {
             type="button"
             aria-pressed={active}
             onClick={() => setLang(option.id)}
-            className={`min-w-9 rounded-full px-2.5 py-1 text-[11px] tracking-[0.16em] transition-colors ${
+            className={`inline-flex h-full min-w-9 items-center justify-center rounded-full px-2.5 text-[11px] tracking-[0.16em] transition-colors ${
               active ? 'bg-paper text-ink' : 'text-mute hover:text-paper bg-transparent'
             }`}
           >

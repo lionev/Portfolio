@@ -45,7 +45,7 @@ export default function CvDownload({ variant }: { variant: Variant }) {
         onClick={() => setOpen((value) => !value)}
         className={
           nav
-            ? 'btn-acid relative z-50 inline-flex items-center gap-1 rounded-full border px-3.5 py-1.5 font-semibold tracking-[0.14em]'
+            ? 'btn-acid relative z-50 inline-flex h-8 items-center gap-1 rounded-full border px-3.5 text-[11px] font-semibold tracking-[0.14em]'
             : 'border-line hover:border-paper inline-flex items-center gap-1.5 rounded-full border px-5 py-2.5 text-sm'
         }
       >
