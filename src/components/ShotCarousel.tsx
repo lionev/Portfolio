@@ -25,12 +25,12 @@ export default function ShotCarousel({ shots, accent }: Props) {
 
   return (
     <div className="overflow-hidden rounded-2xl">
-      <div className="relative bg-[#0c0e14]">
+      <div className="relative h-[42vh] min-h-64 overflow-hidden bg-[#0c0e14] md:h-[28rem]">
         <img
           key={current.src}
           src={current.src}
           alt={caption}
-          className="h-[42vh] min-h-64 w-full bg-[#0c0e14] object-contain object-center md:h-[28rem]"
+          className="h-full w-full scale-[1.04] object-cover object-center"
         />
         <div
           className="pointer-events-none absolute inset-0"

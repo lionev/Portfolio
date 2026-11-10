@@ -374,9 +374,9 @@ export const featured = [
     accent: '#d4ff3f',
     gallery: [
       {
-        src: '/shots/xohub.png',
-        en: 'XoHuB web — module hub for Path of Exile',
-        pt: 'XoHuB web — hub de módulos para Path of Exile',
+        src: '/shots/xohub-hud.png',
+        en: 'XoH module picker — HUD filling the frame',
+        pt: 'Seletor de módulos do XoH — HUD preenchendo o quadro',
       },
     ],
     text: {
@@ -469,9 +469,9 @@ export const featured = [
     accent: '#fbbf24',
     gallery: [
       {
-        src: '/shots/xomacro.png',
-        en: 'Macro library, steps and playback controls',
-        pt: 'Biblioteca de macros, passos e controles de reprodução',
+        src: '/shots/xomacro-demo.png',
+        en: 'Daily demo — morning routine steps and playback',
+        pt: 'Demo do dia a dia — rotina da manhã e reprodução',
       },
     ],
     text: {
@@ -480,15 +480,15 @@ export const featured = [
         summary:
           'A keyboard and mouse recorder/player for daily tasks — hotkeys, cycles, on-screen watermark and a dark theme.',
         body: [
-          'XoMacro is a Windows app I built and iterated to build 62. It is not a loose script: it is a player with a macro library, triggers from a key or mouse button, focus on a specific process, and repeat by count, hold or infinite loop.',
-          'Each macro mixes steps (combo, text, wait, click) or a timeline of recorded events. You can resume from a stage, control speed, delay between cycles and keep the app in the tray. A watermark on screen shows status without stealing the game.',
+          'XoMacro is a Windows app I built and iterated to build 65. It is not a loose script: it is a player with a macro library, triggers from a key or mouse button, focus on a specific process, and repeat by count, hold or infinite loop.',
+          'Each macro mixes steps (combo, text, wait, click) or a timeline of recorded events. You can resume from a stage, control speed, delay between cycles and keep the app in the tray. A watermark on screen shows status without getting in the way.',
           'Portuguese UI, per-monitor DPI, dark/light and a self-contained net8.0-windows publish.',
         ],
         highlights: [
           'Global hotkeys, hold-to-repeat and resume by stage',
           'Process targeting + status watermark',
           'Speed 0.25×–3×, cycles and infinite loop',
-          'Versioned build (v62) with its own theme',
+          'Versioned build (v65) with its own theme',
         ],
       } satisfies ProjectText,
       pt: {
@@ -496,15 +496,15 @@ export const featured = [
         summary:
           'Gravador e repetidor de teclado e mouse para o dia a dia — hotkeys, ciclos, watermark e tema escuro.',
         body: [
-          'XoMacro é um app Windows que gravei e evoluí até a build 62. Não é um script solto: é um player com biblioteca de macros, disparo por tecla ou botão do mouse, foco em processo específico e repetição por contagem, hold ou loop infinito.',
-          'Cada macro combina passos (combo, texto, espera, clique) ou uma timeline de eventos gravados. Dá para retomar do estágio, controlar velocidade, atrasar entre ciclos e manter o app no tray. Uma watermark na tela mostra o status sem roubar o jogo.',
+          'XoMacro é um app Windows que gravei e evoluí até a build 65. Não é um script solto: é um player com biblioteca de macros, disparo por tecla ou botão do mouse, foco em processo específico e repetição por contagem, hold ou loop infinito.',
+          'Cada macro combina passos (combo, texto, espera, clique) ou uma timeline de eventos gravados. Dá para retomar do estágio, controlar velocidade, atrasar entre ciclos e manter o app no tray. Uma watermark na tela mostra o status sem atrapalhar o fluxo.',
           'Interface em português, DPI por monitor, dark/light e publish self-contained em net8.0-windows.',
         ],
         highlights: [
           'Hotkeys globais, hold-to-repeat e resume por estágio',
           'Alvo por processo + watermark de status',
           'Velocidade 0.25×–3×, ciclos e loop infinito',
-          'Build versionada (v62) com tema próprio',
+          'Build versionada (v65) com tema próprio',
         ],
       } satisfies ProjectText,
     },

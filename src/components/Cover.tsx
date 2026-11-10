@@ -6,18 +6,22 @@ type Props = {
   tall?: boolean
 }
 
-const shots: Record<string, { src: string; alt: string; position?: string }> = {
+const shots: Record<string, { src: string; alt: string; fit?: string; position?: string }> = {
   navo: {
     src: '/shots/navo.png',
     alt: 'NAVO — marketplace de agenda com sinal no PIX',
   },
   xohub: {
-    src: '/shots/xohub.png',
+    src: '/shots/xohub-hud.png',
     alt: 'XoHub — hub de módulos para Path of Exile',
+    fit: 'object-cover',
+    position: 'object-center',
   },
   xomacro: {
-    src: '/shots/xomacro.png',
-    alt: 'XoMacro — gravador de teclado e mouse',
+    src: '/shots/xomacro-demo.png',
+    alt: 'XoMacro — rotina diária demonstrativa',
+    fit: 'object-cover',
+    position: 'object-center',
   },
   xoc: {
     src: '/shots/xoc.png',
@@ -41,7 +45,7 @@ export default function Cover({ slug, accent, tall }: Props) {
         <img
           src={shot.src}
           alt={shot.alt}
-          className={`h-full w-full object-cover ${shot.position ?? 'object-top'}`}
+          className={`h-full w-full ${shot.fit ?? 'object-cover'} ${shot.position ?? 'object-top'}`}
           loading="lazy"
           decoding="async"
         />

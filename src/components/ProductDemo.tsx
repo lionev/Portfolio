@@ -174,30 +174,30 @@ function XomacroBody() {
   return (
     <>
       <div className="pd-macro-top">
-        <span>daily_farm</span>
+        <span>rotina_manha</span>
         <b>playing · 1.0×</b>
       </div>
       <div className="pd-timeline">
         <div className="pd-timeline-bar" />
-        <span className="pd-event" style={{ left: '18%' }}>
-          F1
+        <span className="pd-event" style={{ left: '14%' }}>
+          Win+1
         </span>
-        <span className="pd-event is-hot" style={{ left: '42%' }}>
-          click
+        <span className="pd-event is-hot" style={{ left: '38%' }}>
+          digitar
         </span>
-        <span className="pd-event" style={{ left: '68%' }}>
-          wait
+        <span className="pd-event" style={{ left: '62%' }}>
+          Tab
         </span>
-        <span className="pd-event" style={{ left: '86%' }}>
-          loop
+        <span className="pd-event" style={{ left: '84%' }}>
+          Enter
         </span>
       </div>
       <div className="pd-keys">
         <span className="pd-key">Ctrl</span>
-        <span className="pd-key is-on">Q</span>
-        <span className="pd-key">W</span>
-        <span className="pd-key">E</span>
-        <span className="pd-key">R</span>
+        <span className="pd-key is-on">C</span>
+        <span className="pd-key">V</span>
+        <span className="pd-key">Tab</span>
+        <span className="pd-key">Enter</span>
       </div>
     </>
   )
