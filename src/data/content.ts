@@ -375,8 +375,8 @@ export const featured = [
     gallery: [
       {
         src: '/shots/xohub-hud.png',
-        en: 'XoH module picker — HUD filling the frame',
-        pt: 'Seletor de módulos do XoH — HUD preenchendo o quadro',
+        en: 'XoH module picker — horizontal HUD preview',
+        pt: 'Seletor de módulos do XoH — preview horizontal',
       },
     ],
     text: {
