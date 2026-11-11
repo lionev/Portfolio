@@ -269,35 +269,37 @@ export const featured = [
     ],
     text: {
       en: {
-        kicker: 'Voice · Camera · Screen',
+        kicker: 'Voice · Screen · Remote control',
         summary:
-          'A portable Windows call app for friends. Whoever joins first hosts the room on their own PC — voice, camera and screen route peer-to-peer.',
+          'A portable Windows call app for friends. Whoever joins first hosts the room on their own PC — voice, camera, screen and private remote control, all peer-to-peer.',
         body: [
           'XoC is a friends call that does not rent a media server. The first person in the voice channel becomes the host; everyone else connects to that machine with WebRTC.',
+          'Friends can ring a private call from the DM chat. During a screen share, either side can request remote control — mouse and keyboard ride the same session, and control can be revoked anytime.',
           'On the same LAN the PCs find each other. Away from home, a short signal sets the meetup. Noise suppression runs in a worklet, and screen share can carry system audio.',
-          'Distributed as a portable Electron build for Windows, with auto-update from Firebase Hosting. Product showcase live at juliojorge.dev/xoc.',
+          'Distributed as a portable Electron build for Windows, with auto-update from Firebase Hosting. Product page at juliojorge.dev/xoc.',
         ],
         highlights: [
           'Host is whoever enters the voice channel first',
           'Voice, camera, screen + system audio',
+          'Private calls and remote screen control between friends',
           'Portable Windows Electron app',
-          'Product showcase at /xoc',
         ],
       } satisfies ProjectText,
       pt: {
-        kicker: 'Voz · Câmera · Tela',
+        kicker: 'Voz · Tela · Controle remoto',
         summary:
-          'App portátil de call entre amigos no Windows. Quem entra primeiro no canal segura a sala no próprio PC — voz, câmera e tela em peer-to-peer.',
+          'App portátil de call entre amigos no Windows. Quem entra primeiro no canal segura a sala no próprio PC — voz, câmera, tela e controle remoto privado, tudo em peer-to-peer.',
         body: [
           'O XoC é uma call entre amigos que não aluga servidor de mídia. O primeiro a entrar no canal de voz vira o anfitrião; os outros conectam nessa máquina via WebRTC.',
+          'Pelo chat de amigos dá para iniciar uma call privada. Com a tela compartilhada, qualquer um pode pedir o controle remoto — mouse e teclado passam na mesma sessão, e o controle pode ser revogado a qualquer momento.',
           'Na mesma rede os PCs se acham. Longe de casa, um sinal curto combina o encontro. O ruído cai num worklet, e o compartilhamento de tela pode levar o áudio do sistema.',
-          'Distribuído como build Electron portátil para Windows, com atualização automática via Firebase Hosting. Apresentação em juliojorge.dev/xoc.',
+          'Distribuído como build Electron portátil para Windows, com atualização automática via Firebase Hosting. Página do produto em juliojorge.dev/xoc.',
         ],
         highlights: [
           'O host é quem entra primeiro no canal de voz',
           'Voz, câmera, tela + áudio do sistema',
+          'Call privada e controle remoto da tela entre amigos',
           'App Electron portátil para Windows',
-          'Apresentação do produto em /xoc',
         ],
       } satisfies ProjectText,
     },

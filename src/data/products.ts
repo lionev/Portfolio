@@ -40,7 +40,7 @@ export const products: Record<ProductId, Product> = {
   xoc: {
     id: 'xoc',
     name: 'XoC',
-    version: '0.1.91',
+    version: '0.1.99',
     route: '/xoc',
     mark: '/products/xoc-mark.png',
     shot: '/shots/xoc.png',
@@ -53,10 +53,12 @@ export const products: Record<ProductId, Product> = {
       'Voz ao vivo',
       'Câmera',
       'Tela inteira',
+      'Controle remoto',
+      'Call privada',
       'Áudio do PC',
+      'Amigos',
       'Canais',
       'Servidores',
-      'Convite',
       'WebRTC',
       'Windows',
       'Portátil',
@@ -68,10 +70,10 @@ export const products: Record<ProductId, Product> = {
         headline: ['A call', 'fica no', 'primeiro', 'PC.'],
         accentWord: 'primeiro',
         lede:
-          'Voz, câmera e tela entre amigos. Quem entra primeiro no canal segura a sala no próprio computador — e é por essa máquina que o som e a imagem passam.',
-        download: 'Em breve',
+          'Voz, câmera e tela entre amigos. Quem entra primeiro no canal segura a sala no próprio computador — e é por essa máquina que o som e a imagem passam. Na call privada, dá para pedir o controle da tela do amigo.',
+        download: 'Baixar XoC',
         secondary: 'Ver o caminho',
-        live: 'App Windows · peer-to-peer · em demonstração',
+        live: 'App Windows · peer-to-peer · v0.1.99',
         windows: 'Windows x64',
         size: '~71 MB',
         back: 'Portfólio',
@@ -108,7 +110,17 @@ export const products: Record<ProductId, Product> = {
           {
             k: 'Tela',
             title: 'A tela e o som do PC',
-            text: 'Monitor inteiro ou uma janela. O áudio do sistema pode ir junto.',
+            text: 'Monitor inteiro ou uma janela, com a imagem completa na preview. O áudio do sistema pode ir junto.',
+          },
+          {
+            k: 'Controle',
+            title: 'A tela do amigo na sua mão',
+            text: 'Na call privada, pede o controle remoto. Mouse e teclado passam pela transmissão — o amigo vê e pode revogar a qualquer momento.',
+          },
+          {
+            k: 'Privado',
+            title: 'Call só entre dois',
+            text: 'Chamada direta pelo chat de amigos: toque, espera na sala e a conversa só de vocês.',
           },
           {
             k: 'Salas',
@@ -118,17 +130,17 @@ export const products: Record<ProductId, Product> = {
         ],
         closeTitle: 'A call que mora no primeiro PC.',
         closeBody:
-          'O XoC é um app Windows entre amigos: voz, câmera e tela em peer-to-peer, com o anfitrião eleito por quem entra primeiro na sala. Por enquanto, só a apresentação no portfólio.',
+          'O XoC é um app Windows entre amigos: voz, câmera, tela e controle remoto em peer-to-peer, com o anfitrião eleito por quem entra primeiro na sala. Baixa o .exe, abre e cria a sala.',
       },
       en: {
         eyebrow: 'Friends call · peer-to-peer',
         headline: ['The call', 'lives on', 'the first', 'PC.'],
         accentWord: 'the first',
         lede:
-          'Voice, camera and screen between friends. Whoever joins the voice channel first hosts the room on their own machine — and media routes through that PC.',
-        download: 'Coming soon',
+          'Voice, camera and screen between friends. Whoever joins the voice channel first hosts the room on their own machine — and media routes through that PC. In a private call, you can request control of a friend’s screen.',
+        download: 'Download XoC',
         secondary: 'How it routes',
-        live: 'Windows app · peer-to-peer · showcase',
+        live: 'Windows app · peer-to-peer · v0.1.99',
         windows: 'Windows x64',
         size: '~71 MB',
         back: 'Portfolio',
@@ -165,7 +177,17 @@ export const products: Record<ProductId, Product> = {
           {
             k: 'Screen',
             title: 'Screen and PC audio',
-            text: 'Full monitor or a single window. System audio can ride along.',
+            text: 'Full monitor or a single window, with the whole frame in preview. System audio can ride along.',
+          },
+          {
+            k: 'Control',
+            title: 'Your friend’s screen in your hands',
+            text: 'In a private call, request remote control. Mouse and keyboard ride the share — your friend can revoke anytime.',
+          },
+          {
+            k: 'Private',
+            title: 'A call just for two',
+            text: 'Direct call from the friends chat: ring, wait in the room, and a conversation that stays between you.',
           },
           {
             k: 'Rooms',
@@ -175,7 +197,7 @@ export const products: Record<ProductId, Product> = {
         ],
         closeTitle: 'The call that lives on the first PC.',
         closeBody:
-          'XoC is a Windows app for friends: voice, camera and screen peer-to-peer, with the host chosen by whoever joins the room first. For now, this page is showcase only.',
+          'XoC is a Windows app for friends: voice, camera, screen and remote control peer-to-peer, with the host chosen by whoever joins the room first. Download the .exe, open it, and start the room.',
       },
     },
   },

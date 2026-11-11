@@ -25,7 +25,7 @@ const shots: Record<string, { src: string; alt: string; fit?: string; position?:
   },
   xoc: {
     src: '/shots/xoc.png',
-    alt: 'XoC — call peer-to-peer entre amigos',
+    alt: 'XoC — call, tela e controle remoto entre amigos',
     position: 'object-left top',
   },
   pokedeck: {
